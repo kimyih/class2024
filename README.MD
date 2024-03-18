@@ -9,7 +9,7 @@
 
  # vscode 단축키   
 
-     설정 : ctrl  + ,   
+ 설정 : ctrl  + ,   
     사이드 바 : ctrl + b   
 
  # 수업 규칙   
