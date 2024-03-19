@@ -1,8 +1,8 @@
  # 오늘의 수업   
  
- [메인페이지] (https://kimyih.github.io/class2024/)   
+ [메인페이지](https://kimyih.github.io/class2024/)   
 
- [자바스크립트] (https://kimyih.github.io/class2024/javascript/index.html)   
+ [자바스크립트](https://kimyih.github.io/class2024/javascript/index.html)   
 
  # vscode 확장 프로그램   
  Live server : 웹페이지 미리보기   
