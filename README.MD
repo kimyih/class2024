@@ -3,6 +3,7 @@
  [메인페이지](https://kimyih.github.io/class2024/)   
 
  [자바스크립트](https://kimyih.github.io/class2024/javascript/index.html)   
+ [MySQL] (https://kimyih.github.io/class2024/mysqkl/index.html)      
 
  # vscode 확장 프로그램   
  Live server : 웹페이지 미리보기   
@@ -26,7 +27,7 @@
  자기소개 (5분) --> 자기소개(10분) --> 노래 --> 춤 --> 수업 발표
 
 # 자리 옮길 때   
-1. 깃허브 파일 삭제 (내가 앉아있는 자리)
-2. 깃허브 데스크앱 내 아이디로 로그인
-3. 깃허브 데스크앱 파일이 없다고 뜰것 
-4. 왼쪽 상단 - add - clone repository - git. hub - 내가 열 파일 (class2024) 선택 - clone 
+1. 깃허브 파일 삭제 (내가 앉아있는 자리)   
+2. 깃허브 데스크앱 내 아이디로 로그인   
+3. 깃허브 데스크앱 파일이 없다고 뜰것    
+4. 왼쪽 상단 - add - clone repository - git. hub - 내가 열 파일 (class2024) 선택 - clone    
