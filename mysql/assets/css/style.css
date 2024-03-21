@@ -235,7 +235,7 @@ li {
 
 
 .main__sample .sample li {
-    color: var(--black200);
+    color: var(--black300);
     line-height: 1.8;
     font-family: var(--fontN);
     list-style: square;
