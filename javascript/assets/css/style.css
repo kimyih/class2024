@@ -1,4 +1,39 @@
-/* 웹폰트 설정 */
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
 @font-face {
     font-family: "nanumSquareNeo";
     font-weight: 300;
@@ -59,49 +94,40 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'GmarketSans';
+.nanumSquareNeo {
+    font-family: "nanumSquareNeo";
+}
+
+.nanumSquareNeo300 {
+    font-family: "nanumSquareNeo";
     font-weight: 300;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
-    font-display: swap;
 }
 
-@font-face {
-    font-family: 'GmarketSans';
-    font-weight: 500;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-    font-display: swap;
+.nanumSquareNeo400 {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
 }
 
-@font-face {
-    font-family: 'GmarketSans';
+.nanumSquareNeo700 {
+    font-family: "nanumSquareNeo";
     font-weight: 700;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
-    font-display: swap;
+}
+
+.nanumSquareNeo800 {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+}
+
+.nanumSquareNeo900 {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
 }
 
 :root {
     --fontN: "nanumSquareNeo";
-    --foonG: "GmarketSans";
-
+    --fontG: "GmarketSans";
 }
 
-/* 여백 초기화 */
 * {
     padding: 0;
     margin: 0;
@@ -110,11 +136,11 @@
 
 /* 링크 초기화 */
 a {
-    color: #000;
+    color: black;
     text-decoration: none;
 }
 
-/* 목록 초기화 */
+/*  목록 초기화 */
 li {
     list-style: none;
 }
@@ -130,92 +156,96 @@ li {
 #header {
     text-align: center;
     padding: 40px;
-    border-bottom: 1px dashed #dcdcdc;
+    border-bottom: 1px dashed #BCBCBC;
+}
 
-    h1 {
-        margin-bottom: 20px;
+#header h1 {
+    margin-bottom: 20px;
+}
 
-        a {
-            font-family: var(--foonG);
-            font-size: 4vw;
-            color: #4399b3;
+#header h1 a {
+    font-family: var(--fontG);
+    font-size: 4vw;
+    color: #f8cc6e;
+}
 
-            @media (max-width: 800px) {
-                font-size: 42px;
-            }
-
-        }
-    }
-
-    nav {
-        ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            li {
-                margin: 2px;
-
-                a {
-                    font-family: var(--fontN);
-                    border: 1px solid #4399b3;
-                    padding: 10px 20px;
-                    display: inline-block;
-                    color: #4399b3;
-                }
-            }
-        }
+@media (max-width: 800px) {
+    #header h1 a {
+        font-size: 30px;
     }
 }
 
-/* 메인 - 메뉴 */
+#header nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#header nav ul li {
+    margin: 2px;
+}
+
+#header nav ul li a {
+    font-family: var(--fontN);
+    border: 1px solid #f8cc6e;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #a8a8a8;
+    transition: all 0.3s;
+}
+
+#header nav ul li.active a {
+    background-color: #f8cc6e;
+    color: #fff;
+}
+
+#header nav ul li a:hover {
+    background-color: #f8cc6e;
+    color: white;
+}
+
 .main__menu {
     padding: 40px 0;
-    border-bottom: 1px dashed #dcdcdc;
-
-    ul {
-        li {
-            a {
-                color: #4399b3;
-                line-height: 1.7;
-                font-family: var(--fontN);
-
-                &:hover {
-                    text-decoration: underline;
-                    text-underline-position: under;
-                }
-            }
-        }
-    }
-
+    border-bottom: 1px dashed #DCDCDC;
 }
 
-/* 메인- 샘플 */
+.main__menu ul li a {
+    color: #dbc770;
+    line-height: 1.7;
+    font-family: var(--fontN);
+}
+
+.main__menu ul li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+/* 메인 - 샘플 */
 .main__sample {
     padding: 40px 0;
+}
 
-    .sample {
-        margin-bottom: 100px;
+.main__sample .sample {
+    margin-bottom: 100px;
+}
 
-        h3 {
-            font-size: 24px;
-            font-family: var(--foonG);
-            margin-bottom: 10px;
-        }
+.main__sample .sample h3 {
+    font-size: 24px;
+    font-family: var(--fontG);
+    margin-bottom: 10px;
+}
 
-        p {
-            font-family: var(--fontN);
-            margin-bottom: 10px;
-            line-height: 1.5;
-            color: #666;
-        }
+.main__sample .sample p {
+    font-family: var(--fontN);
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #666;
+}
 
-        .result {
-            font-family: var(--fontN);
-            line-height: 1.5;
-            color: #666;
-        }
-    }
+.main__sample .result {
+    font-family: var(--fontN);
+    line-height: 1.5;
+    color: #666;
 }
 
 /* 푸터 */
