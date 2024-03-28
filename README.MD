@@ -10,9 +10,16 @@
  [퀴즈게임](https://kimyih.github.io/class2024/quiz/index.html)   
 
  [퀴즈01](https://kimyih.github.io/class2024/quiz/quiz01.html)   
- -변수
- -선택자(quertSelector)
- -메서드(innerText(), classList, addEventListener, if문)   
+ - 변수
+ - 선택자(quertSelector)
+ - 메서드(innerText(), classList, addEventListener, if문)   
+
+ [퀴즈02](https://kimyih.github.io/class2024/quiz/quiz02.html)   
+ - 배열, 객체 
+ - 선택자(querySelectiorAll())
+ - 반복문 (for() , forEach)
+ - 매서드 (innerHTML(), classList.add, addEventListener, if,문)
+ 
 
  ### vscode 확장 프로그램   
  Live server : 웹페이지 미리보기   

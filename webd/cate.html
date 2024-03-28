@@ -46,6 +46,7 @@
         flex-wrap: wrap;
     }
 
+
     #side nav ul li {
         list-style: none;
     }
@@ -95,7 +96,7 @@
             <h2>webd</h2>
             <nav>
                 <ul>
-                    <li class="active""><a href=" layoutA-1.html">A-1</a></li>
+                    <li class="active"><a href="layoutA-1.html">A-1</a></li>
                     <li><a href="layoutA-2.html">A-2</a></li>
                     <li><a href="layoutA-3.html">A-3</a></li>
                     <li><a href="layoutA-4.html">A-4</a></li>
@@ -162,9 +163,27 @@
             </nav>
         </aside>
         <main id="content">
-            <iframe src="index.html" frameborder="0"></iframe>
+            <iframe src="layoutA-1.html" frameborder="0"></iframe>
         </main>
     </div>
+
+    <script>
+        document.querySelectorAll("nav ul li").forEach((li) => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                let href = li.querySelector("a").getAttribute("href");
+
+                document.querySelector("#content iframe").setAttribute("src", href);
+
+                //모든 active 삭제 
+                document.querySelectorAll("nav ul li").forEach(el => {
+                    el.classList.remove("active");
+                });
+                li.classList.add("active");
+            });
+        });
+    </script>
 </body>
 
 </html>

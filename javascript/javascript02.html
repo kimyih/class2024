@@ -187,7 +187,9 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-
+                            100 <br>
+                            200 <br>
+                            javascript
                         </div>
                     </details>
                 </div>
@@ -336,6 +338,191 @@
             </div>
             <!-- //sample09 -->
 
+            <div id="sample10" class="sample">
+                <h3>10.배열 : 데이터 불러오기 : filter()</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{          
+    const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    console.log("첫번째")
+    num.filter(function (element) {
+        console.log(element);
+    });
+
+    num.filter(function (element, index) {
+        console.log(index);
+    });
+
+    num.filter(function (element, index, array) {
+        console.log(array)
+    });
+
+    console.log("두번째")
+    const arr = num.filter(function (element) {
+        return element > 5;
+    });
+    console.log(arr)    // 6,7,8,9 출력
+
+    console.log("화살표")
+    const arr1 = num.filter((element) => {      //function 제거 후 화살 ()과 { } 사이에 화살표 생성  
+        return element > 5;
+    });
+    console.log(arr)    // 6,7,8,9 출력
+
+    console.log("괄호생략")
+    const arr2 = num.filter(element => {        //화살표로 변경 후 ((element))에 괄호를 생략 가능
+        return element > 5;
+    });
+    console.log(arr)    // 6,7,8,9 출력
+
+    console.log("리턴생략")
+    const arr3 = num.filter(e => e > 5);        //화살표, 괄호 생략 뒤 return도 생략하고 element는 e로 생략
+
+    console.log(arr)    // 6,7,8,9 출력                
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample10 -->
+            <div id="sample13" class="sample">
+                <h3>13.객체 : 데이터 불러오기 : 기본</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log(obj.c);
+
+    console.log(obj["a"]);  
+    console.log(obj["b"]);
+    console.log(obj["c"]);
+
+    //가끔 쓰는 방법
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100 <br>
+                            200 <br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample13 -->
+            <div id="sample14" class="sample">
+                <h3>14.객체 : 데이터 불러오기 : Obhect.key()</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    onst obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+
+    console.log(Object.keys(obj))
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0: "a" <br>
+                            1: "b" <br>
+                            2: "c" <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample14 -->
+            <div id="sample15" class="sample">
+                <h3>15.객체 : 데이터 불러오기 : Obhect.values()</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{                  
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+    console.log(Object.values(obj))               
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0: 100 <br>
+                            1: 200 <br>
+                            2: "javascript" <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample15 -->
+            <div id="sample16" class="sample">
+                <h3>16.객체 : 데이터 불러오기 : Obhect.enteries()</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{                  
+    const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+console.log("16++++++")
+console.log(Object.entries(obj))         
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            0:['a', 100] <br>
+                            1:['b', 200] <br>
+                            2:['c', 'javascript'] <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample16 -->
+            <div id="sample17" class="sample">
+                <h3>10.배열 : 데이터 불러오기 : filter()</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample17 -->
+
+
     </main>
     <!-- //main -->
     <footer id="footer">
@@ -347,128 +534,199 @@
     <script>
         // 01.변수 : 데이터 불러오기
         {
-            let x = 100, y = 200, z = "javascript";
+            let a = 1, b = 2, c = "j"
 
-            console.log("01.변수 : 데이터 불러오기");
-            console.log(x, y, z);
+            console.log(a, b, c);
         }
+
+
         // 02.상수 : 데이터 불러오기
-        {
-            const x = 100, y = 200, z = "javascript";
 
-            console.log("02. 상수 : 데이터 불러오기");
-            console.log(x, y, z);
-        }
         // 03.배열 : 데이터 불러오기
-        {
-            const arr = [100, 200, "javascript"];
 
-            console.log("03. 배열 : 데이터 불러오기");
-            console.log(arr[0], arr[1], arr[2]);
-        }
         // 04.배열 : 데이터 불러오기 : 갯수
         {
-            const arr = [100, 200, "javascript"];
+            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-            console.log("04. 배열 : 데이터 불러오기 : 갯수");
-            console.log(arr.length);
+            console.log(num.length);
         }
+
         // 05.배열 : 데이터 불러오기 : for()문 
         {
-            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-            console.log("05. 배열 : 데이터 불러오기");
-            console.log(arr[0]);
-            console.log(arr[1]);
-            console.log(arr[2]);
-            console.log(arr[3]);
-            console.log(arr[4]);
-            console.log(arr[5]);
-            console.log(arr[6]);
-            console.log(arr[7]);
-            console.log(arr[8]);
-
-            for (let i = 0; i < arr.length; i++) {              // 초깃값; 조건식; 증감값;
-                console.log(arr[i]);
+            for (let i = 0; i < num.length; i += 2) {
+                console.log(num[i]);
             }
         }
+
         // 06.배열 : 데이터 불러오기 : forEach()
         {
-            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            // 01
-            console.log("06. 배열 : 데이터 불러오기 : forEach()");
-            arr.forEach(function (element) { //순서대로 작동
-                console.log(element);
-            });
-            // 02
-            arr.forEach(function (element, index) { //순서대로 작동
-                console.log(index);
-            });
-            // 02
-            arr.forEach(function (element, index, array) { //순서대로 작동
-                console.log(array);
-            });
-            //화살표 함수
-            // 01
-            arr.forEach((e) => {
-                console.log(e);
-            });
-            // 02
-            arr.forEach(e => {
-                console.log(e);
-            });
-            // 03
-            arr.forEach(e => console.log(e))
-        }
-        // 07.배열 : 데이터 불러오기 : for of
-        {
-            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-            console.log("07. 배열 : 데이터 불러오기 : for of");
-            for (let element of arr) {
-                console.log(element);
-            }
+            num.forEach(function (e, i, a) {
+                console.log(e);
+            })
         }
-        // 08.배열 : 데이터 불러오기 : for in
-        {
-            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-            console.log("08. 배열 : 데이터 불러오기 : for in");
-            for (let element in arr) {
-                console.log(arr[element]);
-            }
-        }
+        // 07.배열 : 데이터 불러오기 : for of  (배열)
+
+        // 08.배열 : 데이터 불러오기 : for in   (객체)
+
         // 09.배열 : 데이터 불러오기 : map()
         {
-            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            // 01
-            console.log("09. 배열 : 데이터 불러오기 : map");
-            arr.map(function (element) {
-                console.log(element)        //100~900
+            {
+                const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+                num.map(function (e, i, a) {
+                    console.log(e);
+                })
+            }
+        }
+
+        // 10.배열 : 데이터 불러오기 : filter()
+        {
+            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            console.log("10+++++++++")
+            num.filter(function (element) {
+                console.log(element);
             });
 
-            arr.map(function (element) {
-                console.log(element);       //[100~900]
-            });
-
-            arr.map(function (element, index) {
+            num.filter(function (element, index) {
                 console.log(index);
             });
 
-            arr.map(function (element, index, array) {
-                console.log(array);
+            num.filter(function (element, index, array) {
+                console.log(array)
             });
+
+            console.log("10+++++++++")
+            const arr = num.filter(function (element) {
+                return element > 5;
+            });
+            console.log(arr)    // 6,7,8,9 출력
+
+            console.log("화살표")
+            const arr1 = num.filter((element) => {      //function 제거 후 화살 ()과 { } 사이에 화살표 생성  
+                return element > 5;
+            });
+            console.log(arr)    // 6,7,8,9 출력
+
+            console.log("괄호생략")
+            const arr2 = num.filter(element => {        //화살표로 변경 후 ((element))에 괄호를 생략 가능
+                return element > 5;
+            });
+            console.log(arr)    // 6,7,8,9 출력
+
+            console.log("리턴생략")
+            const arr3 = num.filter(e => e > 5);        //화살표, 괄호 생략 뒤 return도 생략하고 element는 e로 생략
+
+            console.log(arr)    // 6,7,8,9 출력
         }
-        // 10.배열 : 데이터 불러오기 : filter()
+
         // 11.배열 : 데이터 불러오기 : 배열 펼침연산자
         // 12.배열 : 데이터 불러오기 : 배열 구조 분해 할당
         // 13.객체 : 데이터 불러오기 : 기본
-        // 14.객체 : 데이터 불러오기 : Obhect.key()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log("13+++++++++++++")
+            console.log(obj.a);
+            console.log(obj.b);
+            console.log(obj.c);
+
+            console.log(obj["a"]);  //1000번에 한 번 씀 이런게 있다
+            console.log(obj["b"]);
+            console.log(obj["c"]);
+        }
+
+        // 14.객체 : 데이터 불러오기 : Obhect.key()     //중요도는 별로 없지만 알고 있음 좋다
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+
+            console.log("14++++++++")
+            console.log(Object.keys(obj))
+        }
+
         // 15.객체 : 데이터 불러오기 : Obhect.values()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log("15+++++++")
+            console.log(Object.values(obj))
+        }
         // 16.객체 : 데이터 불러오기 : Obhect.enteries()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log("16++++++")
+            console.log(Object.entries(obj))
+        }
         // 17.객체 : 데이터 불러오기 : Obhect.eassingn()
+        {
+            {
+                const obj1 = {
+                    a: 100,
+                    b: 200,
+                }
+                const obj2 = {
+                    c: 300,
+                    d: 400,
+                }
+
+                console.log("17+++++")
+                const obj3 = Object.assign(obj1, obj2);
+
+                console.log(obj3);
+            }
+        }
         // 18.객체 : 데이터 불러오기 : hasOwnproperty()
-        // 19.객체 : 데이터 불러오기 : for in()
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            console.log("18+++++")
+            console.log(obj.hasOwnProperty("a"));   // 내가 원하는 데이터가 있는지 확인 
+            console.log(obj.hasOwnProperty("b"));       // true     
+            console.log(obj.hasOwnProperty("c"));       //true
+            console.log(obj.hasOwnProperty("d"));       // false / d는 없기 때문에 결과값이 나오지 않는다.
+
+            // in 연산자
+            console.log("a" in obj);    //true (최신 방식)
+            console.log("b" in obj);    //true
+            console.log("c" in obj);    //true
+            console.log("d" in obj);    //true
+        }
+
+        // 19.객체 : 데이터 불러오기 : for in()     //배열 안에 들어가 있지 않음 
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+
+            console.log("19++++++")
+            for (let ele in obj) {
+                console.log(el + ":" + obj(ele));
+            }
+        }
         // 20.객체 : 데이터 불러오기 : 객체 펼심연산자
         // 21.객체 : 데이터 불러오기 : 객체 구조 분해 할당
         // 22.서버 데이터 불러오기 : XMLHttpRequest

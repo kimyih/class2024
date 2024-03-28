@@ -11,7 +11,106 @@
 
 </body>
 <script>
+    // 01. 선언적 함수(화살표)
+    {
+        test = () => {
+            console.log("1함수 실행")
+        }
+        test();
+    }
+    // 02. 익명 함수(화살표)
+    {
+        const test = () => {
+            console.log("02함수 실행")
+        }
+        test();
+    }
+    // 03. 매게변수 함수(화살표)
+    {
+        test = (string) => {
+            console.log(string)
+        }
+        test("3함수실행");
+    }
+    // 04. 리턴값 함수(화살표)
+    {
+        test = (string) => {
+            return "4함수실행"
+        }
+        console.log(test());
+    }
+    // 05. 매개변수 + 리턴값 함수(화살표)
+    {
+        test = (string) => {
+            return string
+        }
+        console.log(test("05함수실행"));
+    }
+    // 06. for문(1부터 20까지 출력)
+    {
+        for (let i = 0; i <= 20; i++) {
+            console.log(i);
+        }
+    }
+    // 07. for문(let num = [1,2,3,4,5,6,7,8])출력
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
 
+        console.log("문")
+        for (let i = 0; i < 8; i++) {
+            console.log(num[i])
+        }
+    }
+
+    // 08. forEach()(let num = [1,2,3,4,5,6,7,8])출력
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log("foreach")
+        num.forEach(function (ele) {
+            console.log(ele)
+        })
+    }
+    // 09. for in(let num = [1,2,3,4,5,6,7,8])출력
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log("for in")
+        for (let ele in num) {
+            console.log(num[ele])
+        }
+    }
+    // 10. for of(let num = [1,2,3,4,5,6,7,8])출력
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log("for of")
+        for (let ele of num) {
+            console.log(ele)
+        }
+    }
+    // 11. map(let num = [1,2,3,4,5,6,7,8])출력
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log("map")
+        num.map(function (ele) {
+            console.log(ele)
+        })
+    }
+
+    // 12. filter(let num = [1,2,3,4,5,6,7,8])출력 
+    {
+        const num = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        console.log("filter")
+        num.filter(function (ele) {
+            console.log(ele)
+        })
+    }
+</script>
+
+</script>
 
 </script>
 
