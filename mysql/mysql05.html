@@ -370,8 +370,67 @@
 |       12 | 김혜지    | 1234    |     28 |   951002 |  123456789 |
 +----------+-----------+---------+--------+----------+------------+
 4 rows in set (0.00 sec)</code></pre>
-            </div>
-        </div>
+
+                <h4>데이터를 5개만 불러오기</h4>
+                <div class="info">
+                    SELECT * FROM members LIMIT 5;
+                </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members LIMIT 5;
+
+
+                </code></pre>
+
+                <h4>데이터를 5개만 불러오기(6번~10번)</h4>
+                <div class="info">
+                    SELECT * FROM members LIMIT 5, 5;
+                </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members LIMIT 5, 5;
+                    
+                </code></pre>
+
+                <h4>데이터를 5개만 불러오기(11번~15번)</h4>
+                <div class="info">
+                    mysql> SELECT * FROM members LIMIT 10, 5;
+                </div>
+                <pre><code class="language-js">mysql > SELECT * FROM members LIMIT 10, 5;
+
+                </code></pre>
+
+                <h4>이름 필드 데이터 총 갯수 불러오기</h4>
+                <div class="info">
+                    SELECT count (*) FROM members;
+                </div>
+                <pre><code class="language-js">
+
+                </code></pre>
+
+                <h4>나이 불러오기(중복된 나이를 제거)</h4>
+                <div class="info">
+                    SELECT DISTINCT youAge FROM members;
+                </div>
+                <pre><code class="language-js">mysql > SELECT * FROM members;
+
+                </code></pre>
+
+                <h4>나이가 25살 이상, 성이 황씨인 사람</h4>
+                <div class="info">
+                    SELECT * FROM members WHERE youAge > 25 AND youName LIKE "황%"
+                </div>
+                <pre><code class="language-js"></code></pre>
+
+                <h4>나이가 30살 이상, memberID가 2 또는 15인 멤버</h4>
+                <div class="info">
+                    SELECT * FROM members WHERE youAge >= 30 And memberID IN(2,15); <br>
+                    SELECT * FROM members WHERE youAge >= 30 And (memberID = 2 OR memberID =15;)
+                </div>
+                <pre><code class="language-js">
++----------+-----------+---------+--------+----------+------------+
+| memberID | youName   | youPass | youAge | youBirth | regTime    |
++----------+-----------+---------+--------+----------+------------+
+|    15    | 박진아     | 1232    |   33   |  990304  | 1023958375 |
++----------+-----------+---------+--------+----------+------------+
+1 row in set (0.01 sec)
+                </code></pre>
     </main>
     <!-- //main -->
 

@@ -5,6 +5,7 @@
  [자바스크립트](https://kimyih.github.io/class2024/javascript/index.html)   
  [MySQL](https://kimyih.github.io/class2024/mysql/index.html)   
  [Quiz](https://kimyih.github.io/class2024/quiz/index.html)      
+ [webs](https://kimyih.github.io/class2024/webd/index.html)    
 
  ## 퀴즈 게임
  [퀴즈게임](https://kimyih.github.io/class2024/quiz/index.html)   
