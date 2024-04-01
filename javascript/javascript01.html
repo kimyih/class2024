@@ -18,7 +18,7 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
@@ -877,6 +877,62 @@ const obj = {
             </div>
             <!-- <sample23> -->
 
+            <div id="++연산자" class="sample">
+                <h3>++연산자 (JSON) </h3><br>
+                <p>
+                    + 연산자는 변수의 값을 1씩 증가시키는 단항 연산자입니다. <br>
+                    이 연산자는 변수를 변경하는 역할을 합니다. 변수에 할당된 값을 증가시키는 것이 주요 기능이지만, 약간의 차이가 있습니다. <br><br>
+                </p>
+                <pre><code>{
+    산술 연산자(Arithmetic Operators): 수학적 계산을 수행합니다. 예를 들어, 덧셈(+), 뺄셈(-), 곱셈(*), 나눗셈(/) 등이 있습니다. 
+    할당 연산자(Assignment Operators): 변수에 값을 할당합니다. 예를 들어, =, +=, -=, *=, /= 등이 있습니다.
+    비교 연산자(Comparison Operators): 두 값을 비교하여 참(true) 또는 거짓(false)을 반환합니다. 예를 들어, ==, !=, ===, !==, >, <, >=, <= 등이 있습니다.
+    논리 연산자(Logical Operators): 논리적인 연산을 수행하여 참 또는 거짓을 반환합니다. 주로 조건문과 함께 사용됩니다. 예를 들어, &&(AND), ||(OR), !(NOT) 등이 있습니다.
+    비트 연산자(Bitwise Operators): 이진수를 다루는 연산을 수행합니다. 예를 들어, &(AND), |(OR), ^(XOR), ~(NOT), <<(왼쪽 시프트), >>(오른쪽 시프트) 등이 있습니다.
+    삼항 연산자(Ternary Operator): 조건문의 간단한 버전으로, 조건에 따라 두 개의 표현식 중 하나를 선택하여 실행합니다. 예를 들어, 조건 ? 값1 : 값2 형식으로 사용됩니다.
+    타입 연산자(Type Operators): 피연산자의 데이터 타입을 확인하거나 변환하는데 사용됩니다. 예를 들어, typeof 연산자는 피연산자의 데이터 타입을 반환합니다.
+}</code></pre>
+                <div class="result">
+
+                </div>
+            </div>
+            <!-- <++연산자> -->
+
+            <div id="++자료형" class="sample">
+                <h3>++자료형 (JSON) </h3><br>
+                <p>
+                    - 자료의 형태 <br>
+                    - 총 6가지로 분류(string, number, boolean, function, object, undefined) <br>
+                    - 이 중 숫자, 문자열, 부울은 기본 자료형 <br><br>
+                </p>
+                <pre><code>
+원시 자료형(Primitive Data Types):
+
+숫자(Number): 정수와 부동소수점 숫자를 포함합니다. 예를 들어, 5, 3.14 등이 있습니다.
+문자열(String): 텍스트 데이터를 나타냅니다. 예를 들어, "Hello, world!" 등이 있습니다.
+불리언(Boolean): 참(true) 또는 거짓(false)을 나타냅니다. 예를 들어, true, false 등이 있습니다.
+null: 값이 없음을 나타냅니다. 존재하지 않는 값이거나 비어 있는 값을 나타냅니다.
+undefined: 값이 정의되지 않음을 나타냅니다. 변수가 선언되었지만 값이 할당되지 않은 경우입니다.
+심볼(Symbol): 고유하고 변경 불가능한 값으로 사용됩니다.
+객체(Object): 여러 값을 그룹화하고 관리하기 위해 사용됩니다. 객체는 키-값 쌍의 집합으로 구성되며, 키를 사용하여 값을 접근합니다. 예를 들어, { name: "John", age: 30 } 등이 있습니다.
+
+배열(Array): 여러 값을 순차적으로 저장하는 자료구조입니다. 배열은 대괄호([])로 둘러싸인 요소들의 집합으로 구성되며, 각 요소는 쉼표로 구분됩니다. 예를 들어, [1, 2, 3, 4, 5] 등이 있습니다.
+
+함수(Function): 일련의 작업을 수행하는 코드 블록입니다. 함수는 재사용 가능한 코드 조각을 정의하고 호출하여 실행할 수 있습니다.
+
+기타 자료형:
+
+Date: 날짜와 시간을 나타내는 객체입니다.
+RegExp: 정규 표현식을 나타내는 객체입니다.
+Map, Set: 특정 데이터 구조를 나타내는 객체입니다.
+이러한 자료형들은 JavaScript에서 데이터를 다루고 처리하는데 사용되며, 각각의 특징과 용도에 따라 다양하게 활용됩니다.
+</code></pre>
+                <div class="result">
+
+                </div>
+            </div>
+            <!-- <++연산자> -->
+
 
 
 
@@ -1248,6 +1304,8 @@ const obj = {
 
             console.log(jsonString)     // {"name":"Hwang","age":30}
         }
+
+        //
     </script>
 </body>
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 02</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li class="active"><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:wlsakf23@gmail.com">wlsakf23@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script>
+        // 선택자 
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보 
+        const quizInfo = [
+
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "명령어 형식(instruction format)에서 첫 번째 바이트에 기억되는 것은?",
+                choices: {
+                    1: "채널장치",
+                    2: "제어장치",
+                    3: "터미널장치",
+                    4: "콘솔장치"
+                },
+                answer: "1",
+                desc: "채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완 합니다."
+            },
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "2진수의 1011의 1의 보수는?",
+                choices: {
+                    1: "1000",
+                    2: "0010",
+                    3: "1010",
+                    4: "0100"
+                },
+                answer: "4",
+                desc: "1의 보수는 1은 0으로, 0은 1로 바꾸어 주면 답이 됩니다.",
+            },
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "인터넷에 연결되어 있는 수많은 컴퓨터의 주소는 일정한 규칙에 따라 지어진다. 210.103.4.1과 같이 4개의 필드로 끊어서, (.)으로 분리하여 나타내는 컴퓨터 주소는?",
+                choices: {
+                    1: "개인 ID",
+                    2: "전자 우편 ID",
+                    3: "IP주소",
+                    4: "도메인 주소"
+                },
+                answer: "3",
+                desc: "컴퓨터의 주소를 IP주소라고 하며 .(점)으로 구분하는 방식은 IPv4 방식입니다.",
+            },
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "마이크로프로세서의 기능이 아닌 것은?",
+                choices: {
+                    1: "메모리 관리",
+                    2: "기억 기능",
+                    3: "산술 및 논리 연산",
+                    4: "제어 기능"
+                },
+                answer: "1",
+                desc: "마이크로프로세서란 작은 칩 안에 CPU 기능(연산, 제어, 기억)을 넣어 놓은 것을 말합니다. 메모리 관리와는 관계가 없습니다. <br>일반적으로 메모리 관리는 운영체제에서 합니다.",
+            },
+            {
+                date: "2021년 1회",
+                type: "정보처리기능사",
+                question: "디스크팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면의 수는?",
+                choices: {
+                    1: "12",
+                    2: "10",
+                    3: "8",
+                    4: "6"
+                },
+                answer: "2",
+                desc: "사용 가능 면수는(총 디스크 6장 * 2면) - 2면 입니다. <br>이때 2면은 맨위와 맨 아랫면 2면을 제외하게 됩니다.",
+            }
+        ]
+
+        // 문제 출력
+        const updateQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
+                    <div class="quiz">
+                <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                <div class="quiz__main">
+                    <div class="question">${index + 1}. ${quiz.question}</div>
+                    <div class="choices">
+                        <label for="choice1"-${index}>
+                            <input type="radio" id="choice1-${index}" name="choices-${index}" value="1">
+                            <span>${quiz.choices[1]}</span>
+                        </label>
+                        <label for="choice2"-${index}>
+                            <input type="radio" id="choice2-${index}" name="choices-${index}" value="2">
+                            <span>${quiz.choices[2]}</span>
+                        </label>
+                        <label for="choice3"-${index}>
+                            <input type="radio" id="choice3-${index}" name="choices-${index}" value="3">
+                            <span>${quiz.choices[3]}</span>
+                        </label>
+                        <label for="choice4"-${index}>
+                            <input type="radio" id="choice4-${index}" name="choices-${index}" value="4">
+                            <span>${quiz.choices[4]}</span>
+                        </label>
+                    </div>
+                    <div class="answer">${quiz.answer}</div>
+                    <div class="desc">${quiz.desc}</div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+                `)
+
+                quizWrap.innerHTML = quizArray.join("");
+            });
+
+            console.log(quizArray);
+        }
+        updateQuiz();
+    </script>
+</body>
+
+</html>
