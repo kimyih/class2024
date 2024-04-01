@@ -166,7 +166,7 @@ li {
 #header h1 a {
     font-family: var(--fontG);
     font-size: 4vw;
-    color: #f8cc6e;
+    color: #c28306;
 }
 
 @media (max-width: 800px) {
@@ -187,30 +187,30 @@ li {
 
 #header nav ul li a {
     font-family: var(--fontN);
-    border: 1px solid #f8cc6e;
+    border: 1px solid #c28306;
     padding: 10px 20px;
     display: inline-block;
-    color: #a8a8a8;
+    color: #686868;
     transition: all 0.3s;
 }
 
 #header nav ul li.active a {
-    background-color: #f8cc6e;
+    background-color: #c28306;
     color: #fff;
 }
 
 #header nav ul li a:hover {
-    background-color: #f8cc6e;
+    background-color: #c28306;
     color: white;
 }
 
 .main__menu {
     padding: 40px 0;
-    border-bottom: 1px dashed #DCDCDC;
+    border-bottom: 1px dashed #686868;
 }
 
 .main__menu ul li a {
-    color: #dbc770;
+    color: #c28306;
     line-height: 1.7;
     font-family: var(--fontN);
 }

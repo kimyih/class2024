@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 :: 데이터 제어하기</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/default.min.css">
+
 </head>
 
 <body>
@@ -24,6 +26,7 @@
         </nav>
     </header>
     <!-- //header -->
+
     <main id="main">
         <div class="main__menu container">
             <ul>
@@ -764,108 +767,152 @@ console.log(Object.entries(obj))
 
     </main>
     <!-- //main -->
+
     <footer id="footer">
     </footer>
     <!-- //footer -->
+
     <script src="assets/js/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
     <script>
-        // 01.변수 : 데이터 불러오기
-        {
-            let a = 1, b = 2, c = "j"
-
-            console.log(a, b, c);
-        }
 
 
-        // 02.상수 : 데이터 불러오기
+        //01.변수 : 데이터 불러오기
+        //02.상수 : 데이터 불러오기
+        //03.배열 : 데이터 불러오기 :
+        // 04.배열 : 데이터 불러오기 : 
+        //05.배열 : 데이터 불러오기 : for()문
+        // {
+        //     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-        // 03.배열 : 데이터 불러오기
-
-        // 04.배열 : 데이터 불러오기 : 갯수
-        {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-            console.log(num.length);
-        }
-
-        // 05.배열 : 데이터 불러오기 : for()문 
-        {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-            for (let i = 0; i < num.length; i += 2) {
-                console.log(num[i]);
-            }
-        }
-
+        //     //100번, 200번, 300~900번 
+        //     for (let i = 0; 0 < arr.length; i++) {
+        //         console.log(arr[i] + "번")
+        //     }
+        // }
         // 06.배열 : 데이터 불러오기 : forEach()
         {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-            num.forEach(function (e, i, a) {
-                console.log(e);
-            })
-        }
-
-        // 07.배열 : 데이터 불러오기 : for of  (배열)
-
-        // 08.배열 : 데이터 불러오기 : for in   (객체)
-
-        // 09.배열 : 데이터 불러오기 : map()
-        {
-            {
-                const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-                num.map(function (e, i, a) {
-                    console.log(e);
-                })
+            for (let element of arr) {
+                console.log(element);
             }
         }
-
-        // 10.배열 : 데이터 불러오기 : filter()
+        // 07.배열 : 데이터 불러오기 : for of
         {
-            const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-            console.log("10+++++++++")
-            num.filter(function (element) {
-                console.log(element);
-            });
-
-            num.filter(function (element, index) {
-                console.log(index);
-            });
-
-            num.filter(function (element, index, array) {
-                console.log(array)
-            });
-
-            console.log("10+++++++++")
-            const arr = num.filter(function (element) {
-                return element > 5;
-            });
-            console.log(arr)    // 6,7,8,9 출력
-
-            console.log("화살표")
-            const arr1 = num.filter((element) => {      //function 제거 후 화살 ()과 { } 사이에 화살표 생성  
-                return element > 5;
-            });
-            console.log(arr)    // 6,7,8,9 출력
-
-            console.log("괄호생략")
-            const arr2 = num.filter(element => {        //화살표로 변경 후 ((element))에 괄호를 생략 가능
-                return element > 5;
-            });
-            console.log(arr)    // 6,7,8,9 출력
-
-            console.log("리턴생략")
-            const arr3 = num.filter(e => e > 5);        //화살표, 괄호 생략 뒤 return도 생략하고 element는 e로 생략
-
-            console.log(arr)    // 6,7,8,9 출력
+            for (let element in arr) {
+                console.log(arr[element]);
+            }
         }
+        // 08.배열 : 데이터 불러오기 : for in
+        // 09.배열 : 데이터 불러오기 : map()
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-        // 11.배열 : 데이터 불러오기 : 배열 펼침연산자
-        // 12.배열 : 데이터 불러오기 : 배열 구조 분해 할당
+            arr.map(function (el) {
+                console.log(el)
+            })
+        }
+        // 10.배열 : 데이터 불러오기 : filter()
+
+
+        // 11.배열 : 데이터 불러오기 : 배열 구조 분해 할당
+        {
+            const arr = [100, 200, "javascript"]
+            const [a, b, c] = arr;
+
+            console.log(a); // 100
+            console.log(b); // 200
+            console.log(c); // javascript
+        } {
+            // 선언에서 분리한 할당
+
+            const [a, b, c] = [100, 200, "javascript"];
+
+            console.log(a); // 100
+            console.log(b); // 200
+            console.log(c); // javascript
+        }
+        {
+            const [a, b, c = "javascript"] = [100, 200];
+
+            console.log(a); // 100
+            console.log(b); // 200
+            console.log(c); // javascript
+        }
+        {
+            //배열 일부 요소 무시 
+            const [a, , b] = [100, 200, "javascript"]
+
+            console.log(a); // 100
+            console.log(b); // javascript 
+        }
+        {
+            // 나머지값 할당 
+            const [a, b, ...rest] = [100, 200, "javascript", "jquery"];
+
+            console.log(a);     // 100
+            console.log(b);     // 200
+            console.log(...rest);     // javascript jquery
+
+        }
+        {
+            // 변수 값 교환 랜덤으로 할 때 편함
+            let a = 100, b = 200;
+            [a, b] = [b, a];
+
+            console.log(a);
+            console.log(b);
+        }
+        {
+            //다차원 배열 구조 분해
+            const [a, [b, c]] = [1, [2, "javascript"]];
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 12.배열 : 데이터 불러오기 : 배열 펼침 연산자 (Spread Operator)
+        {
+            // 배열 복사
+            const arr = [100, 200, "javascript"];
+            const copy = [...arr];
+
+            console.log(arr) // [100, 200, "javascript"]
+            console.log(...arr) // 100, 200, "javascript"
+            console.log(copy) // 100, 200, "javascript"
+        }
+        {
+            // 배열 합치기
+
+            const arr1 = [100, 200];
+            const arr2 = [300, 400];
+            const merged1 = [...arr1, ...arr2];
+            const merged2 = [...arr1, "javascript", ...arr2, "jquery"];
+
+            console.log(arr1.concat(arr2)); // [100, 200, 300, 400]
+            console.log(merged1);   //[100, 200, 300, 400]
+            console.log(merged2);   //[100, 200, javascript 300, 400, jquery]
+        }
+        {
+            // 함수 인자로 사용하기
+            function numbers(a, b, c) {
+                return a + b + c;
+            }
+            const nums = [100, 200, 300];
+            console.log(numbers(...nums));
+        }
+        {
+            // 문자열 배열로 변환하기
+            const text1 = "javascript";
+            const text2 = [...text1];
+
+            console.log(text1);
+            console.log(text2);
+        }
         // 13.객체 : 데이터 불러오기 : 기본
         {
             const obj = {
@@ -873,28 +920,22 @@ console.log(Object.entries(obj))
                 b: 200,
                 c: "javascript"
             }
-            console.log("13+++++++++++++")
             console.log(obj.a);
             console.log(obj.b);
             console.log(obj.c);
-
-            console.log(obj["a"]);  //1000번에 한 번 씀 이런게 있다
-            console.log(obj["b"]);
-            console.log(obj["c"]);
         }
-
-        // 14.객체 : 데이터 불러오기 : Obhect.key()     //중요도는 별로 없지만 알고 있음 좋다
+        // 14.객체 : 데이터 불러오기 : Obhect.key()
         {
             const obj = {
                 a: 100,
                 b: 200,
                 c: "javascript"
             }
-
-            console.log("14++++++++")
-            console.log(Object.keys(obj))
+            console.log(Object.keys(obj));
+            console.log(Object.keys(obj)[0]);
+            console.log(Object.keys(obj)[1]);
+            console.log(Object.keys(obj)[2]);
         }
-
         // 15.객체 : 데이터 불러오기 : Obhect.values()
         {
             const obj = {
@@ -902,8 +943,11 @@ console.log(Object.entries(obj))
                 b: 200,
                 c: "javascript"
             }
-            console.log("15+++++++")
-            console.log(Object.values(obj))
+            console.log(Object.values(obj));
+            console.log(Object.values(obj)[0]);
+            // console.log(obj.a) 이런 방법도 있다~
+            console.log(Object.values(obj)[1]);
+            console.log(Object.values(obj)[2]);
         }
         // 16.객체 : 데이터 불러오기 : Obhect.enteries()
         {
@@ -912,62 +956,109 @@ console.log(Object.entries(obj))
                 b: 200,
                 c: "javascript"
             }
-            console.log("16++++++")
-            console.log(Object.entries(obj))
+            console.log(Object.entries(obj));   //[["a", 100]["b",200]] 
         }
         // 17.객체 : 데이터 불러오기 : Obhect.eassingn()
+
+        // 18.객체 : 데이터 불러오기 : hasOwnproperty()
+
+        // 19.객체 : 데이터 불러오기 : for in()
+        // 20.객체 : 데이터 불러오기 : 객체 펼심연산자
+        {
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+
+            const { a, b, c } = obj;
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        {
+            const obj = {
+                a: 100,
+                b: 200
+            }
+            const { a, b, c = "javascript" } = obj;
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        {
+            //새로운 이름으로 변경
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            }
+            const { a: x, b: y, c: z } = obj;
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        {
+            const obj = {
+                a: 100,
+                b: { c: 200, d: "javascript" },
+            }
+            const { a, b: { c, d } } = obj
+
+            console.log(a);
+            console.log(c);
+            console.log(d);
+        }
+        // 21.객체 : 데이터 불러오기 : 객체 펼침 연산자
+        {
+            const obj1 = { a: 100, b: 200, }
+            const obj2 = { c: 300, d: 400, }
+            const merge1 = { ...obj1, ...obj2 }
+            const merge2 = { ...obj1, x: "javascript", ...obj2, y: "jquery" }
+
+            console.log(obj1);  // {a: 100, b: 200,}
+            // console.log(...obj1);  // {a: 100, b: 200,} // 키 값이 있어서 문법 에러 
+            console.log(merge1);  // {a: 100, b: 200, c: 300, d: 400,} 
+            console.log(merge2);  // {a: 100, b: 200, x: "javascript", c:} 
+        }
+
+        // 22.서버 데이터 불러오기 : XMLHttpRequest (옛날 문법 원리만 알면 됨 쓰긴함)
         {
             {
-                const obj1 = {
-                    a: 100,
-                    b: 200,
-                }
-                const obj2 = {
-                    c: 300,
-                    d: 400,
-                }
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
 
-                // obj2의 속성들을 obj1에 병합하여 obj3에 할당합니다.
-                const obj3 = Object.assign(obj1, obj2);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var responseData = xhr.responseText;
+                        var jsonData = JSON.parse(responseData);
 
-                console.log(obj3);
+                        console.log(jsonData);  //데이터 제대로 가지고 왔으면 제대로 뜸 
+                    } else if (xhr.readyState === 4) {
+                        console.error("데이터 불러오기 오류: " + xhr.status);
+                    }
+                };
+
+                xhr.send();
             }
         }
-        // 18.객체 : 데이터 불러오기 : hasOwnproperty()
+        // 23.서버 데이터 불러오기 : fetch API  요즘에 많이 쓰는 방법
         {
-            const obj = {
-                a: 100,
-                b: 200,
-                c: "javascript"
-            }
-            console.log("18+++++")
-            console.log(obj.hasOwnProperty("a"));   // 내가 원하는 데이터가 있는지 확인 
-            console.log(obj.hasOwnProperty("b"));       // true     
-            console.log(obj.hasOwnProperty("c"));       //true
-            console.log(obj.hasOwnProperty("d"));       // false / d는 없기 때문에 결과값이 나오지 않는다.
+            fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data)
+                })
+                .catch(error => {
+                    console.error("데이터 불러오기 오류:", error);  //에러 났을 때 
 
-            // in 연산자
-            console.log("a" in obj);    //true (최신 방식)
-            console.log("b" in obj);    //true
-            console.log("c" in obj);    //true
-            console.log("d" in obj);    //true
+                })
         }
-
-        // 19.객체 : 데이터 불러오기 : for in()     //배열 안에 들어가 있지 않음 
-        {
-            const obj = {
-                a: 100,
-                b: 200,
-                c: "javascript"
-            }
-            for (let el in obj) {
-                console.log(el + " : " + obj[el]);
-            }
-        }
-        // 20.객체 : 데이터 불러오기 : 객체 펼심연산자
-        // 21.객체 : 데이터 불러오기 : 객체 구조 분해 할당
-        // 22.서버 데이터 불러오기 : XMLHttpRequest
-        // 23.서버 데이터 불러오기 : fetch API
 
     </script>
 
