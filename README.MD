@@ -20,7 +20,18 @@
  - 선택자(querySelectiorAll())
  - 반복문 (for() , forEach)
  - 매서드 (innerHTML(), classList.add, addEventListener, if,문)
- 
+
+[퀴즈03](https://kimyih.github.io/class2024/quiz/quiz03.html)  
+ - 변수, 배열, 객체 
+ - 선택자 (quertSelectorAll)
+ - 반복문 (for(), break)
+ - 메서드
+
+[퀴즈04](https://kimyih.github.io/class2024/quiz/quiz04.html)  
+  - 변수, 배열, 객체, 템플릿 리터럴
+ - 선택자 (quertSelectorAll)
+ - 반복문 (for Each())
+ - 메서드 (joijn(), push(), innerHTML())
 
  ### vscode 확장 프로그램   
  Live server : 웹페이지 미리보기   
@@ -53,3 +64,5 @@
 
 [브랜드_색상_제너레이션]https://huemint.com/   
 [SCSS->CSS_변환]https://www.sassmeister.com/   
+
+함수 = 실행문, 재활용 이라는 단어가 떠올라야함

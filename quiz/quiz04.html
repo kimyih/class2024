@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 02</title>
+    <title>퀴즈 03</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
@@ -25,27 +25,63 @@
         </nav>
     </header>
     <!-- //header -->
+
     <main id="main">
         <div class="quiz__wrap"></div>
     </main>
     <!-- //main -->
+
     <footer id="footer">
-        <a href="mailto:wlsakf23@gmail.com">wlsakf23@gmail.com</a>
+        <a href="mailto:webstoyboy@naver.com">webstoyboy@naver.com</a>
     </footer>
     <!-- //footer -->
-
 
     <script>
         // 선택자 
         const quizWrap = document.querySelector(".quiz__wrap");
 
-        // 문제 정보 
+        // 문제 정보
         const quizInfo = [
-
             {
                 date: "2021년 1회",
-                type: "정보처리기능사",
-                question: "명령어 형식(instruction format)에서 첫 번째 바이트에 기억되는 것은?",
+                type: "웹디자인기능사",
+                question: "다음 중 디자인의 기본 요소들로 옳은 것은?",
+                choices: {
+                    1: "선, 색채, 공간, 수량",
+                    2: "점, 선, 면, 질감",
+                    3: "시간, 수량, 구조, 공간",
+                    4: "면, 구조, 공간, 수량"
+                },
+                answer: "2",
+                desc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "이항(binary) 연산에 해당하는 것은?",
+                choices: {
+                    1: "COMPLEMENT",
+                    2: "AND",
+                    3: "ROTATE",
+                    4: "SHIFT"
+                },
+                answer: "2",
+                desc: "단항연산 : ROTATE, SHIFT, MOVE, NOT(COMPLEMENT)"
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "프로그램이 컴퓨터의 기종에 관계없이 수행될 수 있는 성질을 의미하는 것은?",
+                choices: {
+                    1: "가용성",
+                    2: "신뢰성",
+                    3: "호환성",
+                    4: "안전성"
+                },
+                answer: "3",
+                desc: "컴퓨터의 기종에 관계없이 동작하므로 호환성입니다. 호환성이란 까스활명수, 까스명수, 베아제등 이름은 틀리지만 소화제의 기능을 하는것처럼 기종에 관계없이 동작할수 있는 것들을 말합니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "입출력 조작의 시간과 중앙처리장치의 처리시간과의 불균형을 보완하는 것은?",
                 choices: {
                     1: "채널장치",
                     2: "제어장치",
@@ -54,58 +90,30 @@
                 },
                 answer: "1",
                 desc: "채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완 합니다."
-            },
-            {
-                date: "2021년 1회",
-                type: "정보처리기능사",
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "제어장치가 앞의 명령 실행을 완료한 후, 다음에 실행 할 명령을 기억장치로부터 가져오는 동작을 완료할 때까지의 주기를 무엇이라고 하는가?",
+                choices: {
+                    1: "fetch cycle",
+                    2: "transfer cycle",
+                    3: "search time",
+                    4: "run time"
+                },
+                answer: "1",
+                desc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
                 question: "2진수의 1011의 1의 보수는?",
                 choices: {
                     1: "1000",
                     2: "0010",
-                    3: "1010",
-                    4: "0100"
-                },
-                answer: "4",
-                desc: "1의 보수는 1은 0으로, 0은 1로 바꾸어 주면 답이 됩니다.",
-            },
-            {
-                date: "2021년 1회",
-                type: "정보처리기능사",
-                question: "인터넷에 연결되어 있는 수많은 컴퓨터의 주소는 일정한 규칙에 따라 지어진다. 210.103.4.1과 같이 4개의 필드로 끊어서, (.)으로 분리하여 나타내는 컴퓨터 주소는?",
-                choices: {
-                    1: "개인 ID",
-                    2: "전자 우편 ID",
-                    3: "IP주소",
-                    4: "도메인 주소"
+                    3: "0100",
+                    4: "1010"
                 },
                 answer: "3",
-                desc: "컴퓨터의 주소를 IP주소라고 하며 .(점)으로 구분하는 방식은 IPv4 방식입니다.",
-            },
-            {
-                date: "2021년 1회",
-                type: "정보처리기능사",
-                question: "마이크로프로세서의 기능이 아닌 것은?",
-                choices: {
-                    1: "메모리 관리",
-                    2: "기억 기능",
-                    3: "산술 및 논리 연산",
-                    4: "제어 기능"
-                },
-                answer: "1",
-                desc: "마이크로프로세서란 작은 칩 안에 CPU 기능(연산, 제어, 기억)을 넣어 놓은 것을 말합니다. 메모리 관리와는 관계가 없습니다. <br>일반적으로 메모리 관리는 운영체제에서 합니다.",
-            },
-            {
-                date: "2021년 1회",
-                type: "정보처리기능사",
-                question: "디스크팩이 6장으로 구성되었을 때 사용하여 기록할 수 있는 면의 수는?",
-                choices: {
-                    1: "12",
-                    2: "10",
-                    3: "8",
-                    4: "6"
-                },
-                answer: "2",
-                desc: "사용 가능 면수는(총 디스크 6장 * 2면) - 2면 입니다. <br>이때 2면은 맨위와 맨 아랫면 2면을 제외하게 됩니다.",
+                desc: "1의 보수는 1은 0으로, 0은 1로 바꾸어 주면 답이 됩니다."
             }
         ]
 
@@ -116,42 +124,77 @@
             quizInfo.forEach((quiz, index) => {
                 quizArray.push(`
                     <div class="quiz">
-                <div class="quiz__header">${quiz.date} ${quiz.type}</div>
-                <div class="quiz__main">
-                    <div class="question">${index + 1}. ${quiz.question}</div>
-                    <div class="choices">
-                        <label for="choice1"-${index}>
-                            <input type="radio" id="choice1-${index}" name="choices-${index}" value="1">
-                            <span>${quiz.choices[1]}</span>
-                        </label>
-                        <label for="choice2"-${index}>
-                            <input type="radio" id="choice2-${index}" name="choices-${index}" value="2">
-                            <span>${quiz.choices[2]}</span>
-                        </label>
-                        <label for="choice3"-${index}>
-                            <input type="radio" id="choice3-${index}" name="choices-${index}" value="3">
-                            <span>${quiz.choices[3]}</span>
-                        </label>
-                        <label for="choice4"-${index}>
-                            <input type="radio" id="choice4-${index}" name="choices-${index}" value="4">
-                            <span>${quiz.choices[4]}</span>
-                        </label>
+                        <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                        <div class="quiz__main">
+                            <div class="question">${index + 1}. ${quiz.question}</div>
+                            <div class="choices">
+                                <label for="choice${index}-1">
+                                    <input type="radio" id="choice${index}-1" name="choice-${index}" value="1">
+                                    <span>${quiz.choices[1]}</span>
+                                </label>
+                                <label for="choice${index}-2">
+                                    <input type="radio" id="choice${index}-2" name="choice-${index}" value="2">
+                                    <span>${quiz.choices[2]}</span>
+                                </label>
+                                <label for="choice${index}-3">
+                                    <input type="radio" id="choice${index}-3" name="choice-${index}" value="3">
+                                    <span>${quiz.choices[3]}</span>
+                                </label>
+                                <label for="choice${index}-4">
+                                    <input type="radio" id="choice${index}-4" name="choice-${index}" value="4">
+                                    <span>${quiz.choices[4]}</span>
+                                </label>
+                            </div>
+                            <div class="answer none">${quiz.answer}</div>
+                            <div class="desc none">${quiz.desc}</div>
+                        </div>
+                        <div class="quiz__footer">
+                            <button class="confirm">정답 확인하기</button>
+                        </div>
                     </div>
-                    <div class="answer">${quiz.answer}</div>
-                    <div class="desc">${quiz.desc}</div>
-                </div>
-                <div class="quiz__footer">
-                    <button class="confirm">정답 확인하기</button>
-                </div>
-            </div>
                 `)
 
                 quizWrap.innerHTML = quizArray.join("");
             });
-
-            console.log(quizArray);
         }
-        updateQuiz();
+
+        // 정답 확인
+        const answerQuiz = (index) => {
+            const quizChecked = quizWrap.querySelectorAll(`.quiz__main .choices input[name="choice-${index}"]:checked`);
+            const quizElement = quizWrap.querySelectorAll(".quiz")[index];
+            const answerElement = quizWrap.querySelectorAll(".answer")[index];
+            const descElement = quizWrap.querySelectorAll(".desc")[index];
+            const confirmElement = quizWrap.querySelectorAll(".confirm")[index];
+
+            if (quizChecked.length > 0) {     // 사용자가 체크한것
+                const userAnswer = quizChecked[0].value;
+                if (userAnswer === quizInfo[index].answer) {
+                    quizElement.classList.add("good");          // O표시
+
+                } else {
+                    quizElement.classList.add("bad");           // x표시
+                    answerElement.classList.remove("none");    // 정답 보기
+                }
+                descElement.classList.remove("none");       // 해설 보기
+                // confirmElement.classList.add("none");       // 정답 버튼 삭제
+                confirmElement.style.dispay = "none";       // 정답 확인 버튼 숨기기
+            } else {
+                alert("보기를 선택해주세요!! ");
+            }
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            // 문제 출력
+            updateQuiz();
+
+            // 정답 확인
+            quizWrap.querySelectorAll(".confirm").forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    answerQuiz(index);
+                })
+            })
+        })
     </script>
 </body>
 
