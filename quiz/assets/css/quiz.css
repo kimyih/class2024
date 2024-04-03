@@ -295,6 +295,7 @@ body::after {
     content: '📣설명 : ';
 }
 
+
 .quiz__footer .confirm {
     background-color: #ef7ed3c8;
     color: #fff;
@@ -311,6 +312,25 @@ body::after {
     background-color: transparent;
     border: 1px dashed;
     color: #ef7ed3c8;
+    cursor: pointer;
+}
+
+.quiz__footer .next {
+    background-color: #e66dc7c8;
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s;
+}
+
+.quiz__footer .next:hover {
+    background-color: transparent;
+    border: 1px dashed;
+    color: #e66dc7c8;
     cursor: pointer;
 }
 
