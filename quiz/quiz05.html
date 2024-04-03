@@ -77,79 +77,89 @@
         ]
         // 변수
         let currentIndex = 0;   // 현재 문제에 대한 값
-        console.log(currentIndex)
 
-        // 문제 출력
+        // 문제 출력 
         const updateQuiz = (index) => {
             let quizWrapTag = `
-                <div class="quiz">
-                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
-                <div class="quiz__main">
-                    <div class="question">${index + 1}. ${quizInfo[index].question}</div>
-                    <div class="choices">
-                        <label for="choice1">
-                            <input type="radio" id="choice1" name="choices" value="1">
-                            <span>${quizInfo[index].choices[0]}</span>
-                        </label>
-                        <label for="choice2">
-                            <input type="radio" id="choice2" name="choices" value="2">
-                            <span>${quizInfo[index].choices[1]}</span>
-                        </label>
-                        <label for="choice3">
-                            <input type="radio" id="choice3" name="choices" value="3">
-                            <span>${quizInfo[index].choices[2]}</span>
-                        </label>
-                        <label for="choice4">
-                            <input type="radio" id="choice4" name="choices" value="4">
-                            <span>${quizInfo[index].choices[3]}</span>
-                        </label>
-                    </div>
-                        <div class="answer">${quizInfo[index].answer}</div>
-                        <div class="desc">${quizInfo[index].desc}</div>
-                    </div>
-                    <div class="quiz__footer">
-                        <button class="confirm">정답 확인하기</button>
-                        <button class="next">다음으로</button>
-                    </div>
+        <div class="quiz">
+            <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+            <div class="quiz__main">
+                <div class="question">${index + 1}. ${quizInfo[index].question}</div>
+                <div class="choices">
+                    <label for="choice1">
+                        <input type="radio" id="choice1" name="choice" value="1">
+                        <span>${quizInfo[index].choices[0]}</span>
+                    </label>
+                    <label for="choice2">
+                        <input type="radio" id="choice2" name="choice" value="2">
+                        <span>${quizInfo[index].choices[1]}</span>
+                    </label>
+                    <label for="choice3">
+                        <input type="radio" id="choice3" name="choice" value="3">
+                        <span>${quizInfo[index].choices[2]}</span>
+                    </label>
+                    <label for="choice4">
+                        <input type="radio" id="choice4" name="choice" value="4">
+                        <span>${quizInfo[index].choices[3]}</span>
+                    </label>
                 </div>
-            `
+                <div class="answer none">${quizInfo[index].answer}</div>
+                <div class="desc none">${quizInfo[index].desc}</div>
+            </div>
+            <div class="quiz__footer">
+                <button class="confirm">정답 확인하기</button>
+                <button class="next none">다음 문제</button>
+            </div>
+        </div>
+    `
             quizWrap.innerHTML = quizWrapTag;
 
-            // 선택자
+            // 선택자 
             const quizConfirm = quizWrap.querySelector(".confirm");
             const quizNext = quizWrap.querySelector(".next");
 
-            // 정답 버튼을 클릭 alert (currentIndex);
+            // 정답 버튼을 클릭
             quizConfirm.addEventListener("click", () => {
-                // 사용자가 클릭한 정답 확인
-                const quizChecked = quizWrap.querySelector("input[name='choices']:checked");  // 사용자가 클릭한 정답 확인
+                const quizChecked = quizWrap.querySelector("input[name='choice']:checked"); // 사용자가 클릭한 정답 확인
 
-                const userAnswer = quizChecked.value;   // 사용자가 클릭한 value 값
-                const quizAnswer = quizInfo[currentIndex].answer;    // 정답지의 정답
-                const quizElement = quizWrap.querySelector(".quiz");
-                const answerElement = quizWrap.querySelector(".answer");
-                const descElement = quizWrap.querySelector(".desc");
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;               // 사용자가 클릭한 정답
+                    const quizAnswer = quizInfo[currentIndex].answer    // 정답지의 정답
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
 
-                // 사용자 정답과 정답지 정답을 비교 
-                if (userAnswer === quizAnswer) {
-                    alert("정답입니다!!")
+                    // 사용자 정답과 정답지 정답을 비교
+                    if (userAnswer === quizAnswer) {
+                        quizElement.classList.add("good");
+                    } else {
+                        quizElement.classList.add("bad");
+                        answerElement.classList.remove("none")
+                    }
+                    descElement.classList.remove("none");   // 설명 추가
+                    quizConfirm.classList.add("none");  // 정답 버튼 삭제
+                    quizNext.classList.remove("none");  // 다음 버튼 추가
                 } else {
-                    alert("오답입니다.")
+                    alert("보기를 선택해주세요! 🥳");
                 }
-            })
+            });
 
-            // 다음 문제 버튼을 클릭하면 alert ()
+            // 다음 문제 버튼을 클릭
             quizNext.addEventListener("click", () => {
-                //currentIndex 1을 추가 
-                currentIndex++;
-                console.log(currentIndex)
-            })
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;             // 문제 번호 증가
+                    updateQuiz(currentIndex)    // 퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.🫡");
+                }
+            });
         }
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             updateQuiz(currentIndex);
         });
+
 
     </script>
 </body>
