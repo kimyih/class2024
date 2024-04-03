@@ -151,12 +151,156 @@
             <!-- //sample 03 -->
 
             <div id="sample04" class="sample">
-                <h3>01.if문</h3><br>
+                <h3>04. if문 생략 & 삼항 연산자</h3><br>
                 <p>
 
                 </p>
                 <pre><code>{
+    const num = 100;
 
+    if (num == 100) {
+        console.log("true")
+    }
+
+    // 생략
+    if (num == 100) console.log("ture")  //생략 가능 자바스크립트에선 생략 잘 안 함 가독성 떨어져서 파이썬에선 사용 많이 함
+
+    if (num == 100) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+    //삼항 연산자 (조건식 연산자);
+    num == 100 ? console.log("true") : console.log("false");
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            true <br>
+                            true <br>
+                            true <br>
+                            true <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 04 -->
+
+            <div id="sample05" class="sample">
+                <h3>5. switch문 </h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    const num = 100;
+
+    switch (num) {
+        case 90:
+            console.log("실행되었습니다.(90)");
+            break;
+        case 95:
+            console.log("실행되었습니다.(95)");
+            break;
+        case 100:
+            console.log("실행되었습니다.(100)");
+            break;
+        case 105:
+            console.log("실행되었습니다.(105)");
+            break;
+        default:
+
+            console.log("실행되었습니다.");
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            실행되었습니다.(100)
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 05 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. while문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+        let num = 1;        // 초깃값;
+
+        while (num &lt= 10) {     // 조건식;
+            console.log(num);   // 실행문
+            num++;      //증감값    for문과 while문의 차이는 순서 차이 어떤 거 먼저 실행시키냐 차이
+        }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            2 <br>
+                            3 <br>
+                            4 <br>
+                            5 <br>
+                            6 <br>
+                            7 <br>
+                            8 <br>
+                            9 <br>
+                            10 <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 06 -->
+
+            <div id="sample07" class="sample">
+                <h3>07. do while문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    let num = 1; // 초깃값;
+
+    do {
+        console.log(num);   // 실행문
+        num++;      // 증감값
+    } while (num &lt= 10);     // 조건식
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            2 <br>
+                            3 <br>
+                            4 <br>
+                            5 <br>
+                            6 <br>
+                            7 <br>
+                            8 <br>
+                            9 <br>
+                            10 <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 07 -->
+
+            <div id="sample08" class="sample">
+                <h3>08. for문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    {
+        for (let i = 1; i &lt= 10; i++) {     // 초깃값; 조건식; 증감값 
+            console.log(i)      // 실행문
+        }
+    }
 }</code></pre>
                 <div class="result">
                     <details>
@@ -167,7 +311,86 @@
                     </details>
                 </div>
             </div>
-            <!-- //sample 04 -->
+            <!-- //sample 08 -->
+
+            <div id="sample09" class="sample">
+                <h3>09. 중첩for문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+  
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 09 -->
+
+            <div id="sample10" class="sample">
+                <h3>10. break문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    for (let i = 1; i &lt= 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        console.log(i)
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            2 <br>
+                            3 <br>
+                            4 <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 10 -->
+
+            <div id="sample11" class="sample">
+                <h3>11. continue문</h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    for (let i = 1; i &lt= 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        console.log(i)
+    }
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            2 <br>
+                            3 <br>
+                            4 <br>
+                            6 <br>
+                            7 <br>
+                            8 <br>
+                            9 <br>
+                            10 <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample 11 -->
+
 
     </main>
     <!-- //main -->
@@ -229,6 +452,7 @@
             const num = 100;
 
             if (num == 100) {
+                console.log("04+++++++++++")
                 console.log("true")
             }
 
@@ -256,12 +480,14 @@
                     console.log("실행되었습니다.(95)");
                     break;
                 case 100:
+                    console.log("05+++++++++++")
                     console.log("실행되었습니다.(100)");
                     break;
                 case 105:
                     console.log("실행되었습니다.(105)");
                     break;
                 default:
+
                     console.log("실행되었습니다.");
             }
         }
@@ -296,7 +522,11 @@
         // 09.중첩for문
         {
             for (let i = 1; i <= 10; i++) {     // 초깃값; 조건식; 증감값 
+                console.log("09. 중첩 for문+++++++++")
                 console.log(i)      // 실행문
+                for (let j = 1; j <= 10; j++) {     // 초깃값; 조건식; 증감값 
+                    console.log(j)      // 실행문
+                }
             }
         }
 
@@ -306,6 +536,7 @@
                 if (i == 5) {
                     break;
                 }
+                console.log("10+++++++++++")
                 console.log(i)
             }
         }
@@ -316,7 +547,7 @@
                 if (i == 5) {
                     continue;
                 }
-                console.log("10.cotinue문++++++++")
+                console.log("11.cotinue문++++++++")
                 console.log(i)
             }
         }
