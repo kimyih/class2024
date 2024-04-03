@@ -94,15 +94,17 @@
     font-display: swap;
 }
 
-:root {
-    --foontN: "nanumSquareNeo";
-    --foontG: "GmarketSans";
-}
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --foontN: "nanumSquareNeo";
+    --foontG: "GmarketSans";
 }
 
 body {
@@ -231,7 +233,7 @@ body {
                 margin-top: 30px;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: space-between;
 
                 h3 {
                     width: 100%;

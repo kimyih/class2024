@@ -40,56 +40,52 @@
             border: 8px solid #ffbc37;
             border-radius: 20px;
             position: relative;
+        }
 
-            &::before {
-                content: '';
-                border: 8px solid #7a756b;
-                width: calc(100% - 16px);
-                height: calc(100% - 16px);
-                position: absolute;
-                left: 0;
-                top: 0;
-                border-radius: 12px;
-                z-index: -1;
+        main::before {
+            content: "";
+            border: 8px solid #7a756b;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 12px;
+            z-index: -1;
+        }
 
-            }
+        main h1 {
+            font-size: 5vw;
+            margin-bottom: 3vw;
+            margin-top: 1vw;
+        }
 
-            h1 {
-                font-size: 5vw;
-                margin-bottom: 3vw;
-                margin-top: 1vw;
+        main h1 a {
+            color: #ffbc37;
+        }
 
-                a {
-                    color: #ffbc37
-                }
-            }
+        main nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-            nav {
-                ul {
-                    display: flex;
+        main nav ul li a {
+            display: inline-block;
+            font-size: 16px;
+            font-family: "nanumSquareNeo";
+            border: 1px dashed #feb31e;
+            padding: 10px 20px;
+            margin: 2px;
+            color: #e19f1c;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
 
-                    li {
-                        a {
-                            display: inline-block;
-                            font-size: 16px;
-                            font-family: "nanumSquareNeo";
-                            border: 1px dashed #feb31e;
-                            padding: 10px 20px;
-                            margin: 2px;
-                            color: #e19f1c;
-                            background-color: #fff;
-                            transition: all 0.3s;
-
-                            &:hover {
-                                border: 1px solid #e19f1c;
-                                background-color: #feb31e;
-                                color: #fff;
-
-                            }
-                        }
-                    }
-                }
-            }
+        main nav ul li a:hover {
+            border: 1px solid #e19f1c;
+            background-color: #feb31e;
+            color: #fff;
         }
 
         body .wrap {
