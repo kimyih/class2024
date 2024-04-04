@@ -591,7 +591,7 @@
         c: "javascript"
 }
 
-    console.log(obj.a);
+    console.log(obj.a);     
     console.log(obj.b);
     console.log(obj.c);
 }</code></pre>
@@ -666,13 +666,13 @@
                 <pre><code>{
     const obj = {
         a: 100,
-        b: [200, 300],
+        b: [200, 300],      // obj 객체 내에 'b' 속성을 배열 [200, 300]으로 설정합니다.
         c: "javascript"
 }
 
     console.log(obj.a)  
     console.log(obj.b)  
-    console.log(obj.b[0])   
+    console.log(obj.b[0])       // obj 객체의 'b' 속성 값인 배열의 첫 번째 요소(인덱스 0)인 200을 출력합니다.
     console.log(obj.b[1])   
     console.log(obj.b[0])  
 }</code></pre>
@@ -709,7 +709,7 @@
         c: "javascript"
 }
     console.log(obj.a)   
-    console.log(obj.b.x)  
+    console.log(obj.b.x)        // obj 객체의 'b' 속성 값인 객체의 'x' 속성 값을 출력합니다.
     console.log(obj.b.y)   
     console.log(obj.c)   
 }</code></pre>
@@ -736,26 +736,28 @@
                     객체 내부에서 함수를 사용하여 객체의 상태를 변경하거나 특정 동작을 수행할 수 있기 때문에 코드를 읽고 이해하기 쉽습니다. <br><br>
                 </p>
                 <pre><code>{
-const obj = {
-    a: 100,
-    b: [200, 300],
-    c: "javascript",
-    d: function () {
-        console.log("javascript가 실행되었습니다.");
-    },
-    e: function () {
-        console.log(obj.c + "가 실행되었습니다.");
-    },
-    f: function () {
-        console.log(this.c + "가 실행되었습니다")
+                    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: "javascript",
+        d: function () {
+            console.log("javascript가 실행되었습니다.");
+        },
+        e: function () {
+            console.log(this.c + "가 실행되었습니다.");
+        },
+        f: function () {
+            console.log(this.c + "가 실행되었습니다.");
+        }
+    };
 
-        console.log(obj.a); 
-        console.log(obj.b[0]); 
-        console.log(obj.b[1]); 
-        console.log(obj.c); 
-        obj.d();
-        obj.e();
-        obj.f();
+    console.log(obj.a);   // obj 객체의 'a' 속성 값을 출력합니다.
+    console.log(obj.b[0]);// obj 객체의 'b' 속성 값인 배열의 첫 번째 요소를 출력합니다.
+    console.log(obj.b[1]);// obj 객체의 'b' 속성 값인 배열의 두 번째 요소를 출력합니다.
+    console.log(obj.c);   // obj 객체의 'c' 속성 값을 출력합니다.
+    obj.d();              // obj 객체의 'd' 속성인 함수를 호출하여 "javascript가 실행되었습니다."를 출력합니다.
+    obj.e();              // obj 객체의 'e' 속성인 함수를 호출하여 "javascript가 실행되었습니다."를 출력합니다.
+    obj.f();              // obj 객체의 'f' 속성인 함수를 호출하여 "javascript가 실행되었습니다."를 출력합니다.
 }</code></pre>
                 <div class="result">
                     <details>
@@ -780,11 +782,9 @@ const obj = {
             <div id="sample21" class="sample">
                 <h3>21. 객체 : 데이터 저장(키와값) : 표현방법 9 : 객체구조분해할당</h3><br>
                 <p>
-
                     객체 구조 분해 할당은 JavaScript에서 객체의 속성을 해체하여 변수에 할당하는 방법입니다. <br>
                     이를 통해 객체의 각 속성에 대해 개별적으로 접근하거나 다른 변수에 할당할 수 있습니다. <br>
                     이는 코드를 더 간결하고 가독성 있게 만들어줍니다. <br><br>
-
                 </p>
                 <pre><code>{
     const obj = {
@@ -863,20 +863,22 @@ const obj = {
                 </p>
                 <pre><code>{
     {
-        // 01 JSON 데이터 --&gt; 객체 변환 
+        // 01 JSON 데이터 --> 객체 변환 
+        // JSON 형식의 문자열을 JavaScript 객체로 변환합니다.
         const jsonString = '{"name": "Hwang", "age": 30}';
-        const jsonobject = JSON.parse(jsonString);
-
-        console.log(jsonobject.name);   //Hwang
-        console.log(jsonobject.age);   //30
+        const jsonObject = JSON.parse(jsonString);
+    
+        console.log(jsonObject.name); // JSON 객체의 'name' 속성 값을 출력합니다. (결과: "Hwang")
+        console.log(jsonObject.age);  // JSON 객체의 'age' 속성 값을 출력합니다. (결과: 30)
     }
+    
     {
-
-        // 02 객체 파일 --&gt; JSON 데이터 
-        const person = { name: "Hwang", age: 30 }
+        // 02 객체 파일 --> JSON 데이터 
+        // JavaScript 객체를 JSON 형식의 문자열로 변환합니다.
+        const person = { name: "Hwang", age: 30 };
         const jsonString = JSON.stringify(person);
-
-        console.log(jsonString)     // {"name":"Hwang","age":30}
+    
+        console.log(jsonString); // JavaScript 객체를 JSON 형식으로 변환한 문자열을 출력합니다. (결과: {"name":"Hwang","age":30})
     }
     }</code></pre>
                 <div class="result">
