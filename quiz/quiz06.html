@@ -45,9 +45,23 @@
 
         // 문제 가져오기
         const fetchQuiz = () => {
-            fetch("")
-        }
+            fetch("https://kimyih.github.io/class2024/json1/gineungsaJC2005_02.json") //json 주소 붙여야함
+                .then(res => res.json())
+                .then(items => {
+                    console.log(items);
+                    quizInfo = items.map((item, idx) => {
+                        const formattedQuiz = {
+                            infoDate: "2005년 2회",
+                            infoType: item.subject
+                        }
+                        return formattedQuiz;
+                    });
+                    console.log(quizInfo);
 
+
+                })
+        }
+        fetchQuiz();
     </script>
 </body>
 
