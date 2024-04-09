@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 100</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+    </header>
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+        <div class="quiz__check">정답 확인</div>
+    </main>
+
+    <footer id="footer">
+        <a href="mailto:wlsakf23@gmail.com">wlsakf23@gmail.com</a>
+    </footer>
+
+    <script>
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizCheck = document.querySelector(".quiz__check");
+
+        let quizInfo = [];
+        let currentIndex = 0;
+
+        const fetchQuiz = () => {
+            fetch("https://nicejmp1.github.io/class2024/json/gineungsaJC2005_02.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map(item => {
+                        const formattedQuiz = {
+                            date: "2005년 2회",
+                            type: item.subject,
+                            question: item.question,
+                            desc: item.desc,
+                            answer: item.correct_answer
+                        }
+                        const choices = [...item.incorrect_answers, item.correct_answer];
+
+                        for (let i = choices.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [choices[i], choices[j]] = [choices[j], choices[i]];
+                        }
+
+                        formattedQuiz.choices = choices;
+
+                        return formattedQuiz;
+                    });
+
+                    presentQuiz(currentIndex);
+                })
+        }
+
+        const presentQuiz = (index) => {
+            const quiz = quizInfo[index];
+            const quizElement = `
+                <div class="quiz">
+                    <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                    <div class="quiz__main">
+                        <div class="question">${index + 1}. ${quiz.question}</div>
+                            <div class="choices">
+                                <label for="choice1">
+                                    <input type="radio" id="choice1" name="choice" value="1">
+                                    <span>${quiz.choices[0]}</span>
+                                </label>
+                                <label for="choice2">
+                                    <input type="radio" id="choice2" name="choice" value="2">
+                                    <span>${quiz.choices[1]}</span>
+                                </label>
+                                <label for="choice3">
+                                    <input type="radio" id="choice3" name="choice" value="3">
+                                    <span>${quiz.choices[2]}</span>
+                                </label>
+                                <label for="choice4">
+                                    <input type="radio" id="choice4" name="choice" value="4">
+                                    <span>${quiz.choices[3]}</span>
+                                </label>
+                            </div>
+                            <div class="answer none">${quiz.answer}</div>
+                            <div class="desc none">${quiz.desc}</div>
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
+                    </div>
+                </div>
+            `;
+            quizWrap.innerHTML = quizElement;
+
+            const quizConfirm = document.querySelector(".confirm");
+            const quizNext = document.querySelector(".next");
+
+            quizConfirm.addEventListener("click", () => {
+                const quizChecked = document.querySelector("input[name='choice']:checked");
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;
+                    const correctAnswer = quiz.answer;
+                    const answerElement = document.querySelector(".answer");
+                    const descElement = document.querySelector(".desc");
+
+                    if (userAnswer === correctAnswer) {
+                        quizWrap.classList.add("good");
+                    } else {
+                        quizWrap.classList.add("bad");
+                        answerElement.classList.remove("none");
+                    }
+                    descElement.classList.remove("none");
+                    quizConfirm.classList.add("none");
+                    quizNext.classList.remove("none");
+                } else {
+                    alert("보기를 선택해주세요!");
+                }
+            });
+
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;
+                    presentQuiz(currentIndex);
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                }
+            });
+        }
+
+        quizCheck.addEventListener("click", () => {
+            const quizElements = document.querySelectorAll(".quiz");
+            let correctCount = 0;
+
+            quizElements.forEach(quizElement => {
+                const userAnswer = quizElement.querySelector("input[name='choice']:checked").value;
+                const correctAnswer = quizElement.querySelector(".answer").textContent;
+
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                }
+            });
+
+            const totalScore = ((correctCount / quizInfo.length) * 100).toFixed(2);
+            alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수: ${correctCount}/${quizInfo.length}`);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
+        });
+    </script>
+</body>
+
+</html>
