@@ -15,13 +15,13 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            background: linear-gradient(to bottom, rgb(1, 141, 201, 0.63), transparent);
+            background: linear-gradient(to top, rgba(224, 196, 118, 0.804), rgb(169, 226, 255), #ffffff);
         }
 
         div[class^="bubble-"] {
             width: 1px;
-            height: 1px;
-            background-color: rgba(1, 141, 210, 0.3);
+            height: 3px;
+            background-color: rgba(27, 213, 255, 0.3);
             border-radius: 50%;
             position: absolute;
             bottom: 6px;
@@ -29,8 +29,6 @@
             animation-duration: 5s;
             animation-iteration-count: infinite;
         }
-
-
 
         div[class^="bubble-"]::after {
             content: '';
@@ -43,6 +41,7 @@
             height: 85%;
             border-top: 1px solid rgba(255, 255, 255, 1);
             border-radius: 50%;
+            animation: sparkle 3s infinite ease-in-out;
         }
 
         .bubble-1 {
@@ -145,6 +144,21 @@
             animation-delay: 1000ms;
         }
 
+        @keyframes bubble-burst {
+            0%, 80% {
+            opacity: 1;
+            transform: scale(1);
+        }
+            90% {
+            opacity: 0.5;
+            transform: scale(1.5);
+        }
+            100% {
+            opacity: 0;
+            transform: scale(0);
+    }
+}
+
         .jelly-wrapper {
             width: 256px;
             height: 310px;
@@ -156,7 +170,7 @@
         }
 
         @keyframes jelly-movement {
-            0% {top: 55%;left: 50%}
+            0% {top: 55%; left: 50%; bottom: 15px;}
 
             5% {top: 50%}
 
@@ -176,7 +190,7 @@
 
             45% {top: 50%}
 
-            50% {top: 55%;left: 50%}
+            50% {top: 55%;left: 50%; bottom: 35px;}
 
             55% {top: 50%}
 
@@ -196,7 +210,7 @@
 
             95% {top: 50%}
 
-            100% {top: 55%;left: 50%;}
+            100% {top: 55%;left: 50%; bottom: 15px;}
         }
 
         @keyframes bubble-move {
@@ -214,17 +228,67 @@
         }
 
         .jelly-hair {
-            width: 100px;
-            height: 75px;
-            background: linear-gradient(to bottom, #ef891a 0%, #ef891a 2%, #ebf28a 100%);
             position: absolute;
-            left: 30%;
-            top: -10px;
-            z-index: -2;
-            border-radius: 25px;
-            animation: hair-movement 10s infinite linear;
+            top: -15px; /* 위치 조정 */
+            left: 50%;
+            width: 30px; /* 리본 중앙 띠의 너비 */
+            height: 30px; /* 리본 중앙 띠의 높이 */
+            background-color: #ffcc00; /* 리본 색상 */
+            transform: translateX(-50%);
+            z-index: 0;
         }
-        @keyframes hair-movement {
+
+        .jelly-hair::before,
+        .jelly-hair::after {
+            content: '';
+            position: absolute;
+            width: 70px; /* 리본 끝부분의 너비 */
+            height: 50px; /* 리본 끝부분의 높이 */
+            top: -10%;
+            transform: rotate(45deg);
+            background-color: #ffcc00;
+            box-shadow: 0 2px #d36817;
+        }
+
+        .jelly-hair::before {
+            left: -50px; /* 왼쪽 리본 위치 조정 */
+            border-radius: 50% 0 30% 50%; /* 왼쪽 리본 모양 조정 */
+        }
+
+
+        .jelly-hair::after {
+            right: -50px; /* 오른쪽 리본 위치 조정 */
+            border-radius: 0 50% 50% 30%; /* 오른쪽 리본 모양 조정 */
+            transform: rotate(-45deg);
+        }
+
+        .jelly-hair1 {
+            position: absolute;
+            top: -10px; /* 위치 조정 */
+            left: 30%;
+            z-index: 2;
+            box-shadow: #ae2626;
+        }
+
+        .jelly-hair1::before  {
+            content: '';
+            position: absolute;
+            left: 35px;
+            width: 20px;
+            height: 15px;
+            box-shadow: 0 2px #d36817;
+        }
+
+        .jelly-hair1::after {
+            content: '';
+            position: absolute;
+            left: -40px;
+            width: 20px;
+            height: 15px;
+            box-shadow: 0 2px #d36817;
+        }
+
+        /* @keyframes hair-movement {
             0% {transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
             20% {transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
             25% {transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
@@ -233,50 +297,60 @@
             75% {transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 75deg);}
             80% {transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
             100% {transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 75deg);}
-        }
+        } */
         
         .jelly-body {
             width: 100%;
             height: 250px;
-            background:linear-gradient(to bottom, #009dd2, #ebf28a);
-            border-top-left-radius: 70px;
+            background: linear-gradient(to bottom, #e8acac, #ae2626);
+            border-top-left-radius: 60px;
             border-top-right-radius: 90px;
-            animation: body-movement 10s infinite linear;
+            animation: body-movement 10s infinite linear , breathe 3s infinite ease-in-out;
             position: relative;
             z-index: 1;
             overflow: hidden;
         }
+
+        @keyframes breathe {
+            0%, 100% {
+            transform: scale(1);
+        }
+            50% {
+            transform: scale(1.05); /* 숨을 들이쉴 때 젤리의 크기를 약간 늘립니다 */
+        }
+    }
+
         @keyframes body-movement {
             0% {
-                border-top-left-radius: 70px;
-                border-top-right-radius: 90px;
+                border-top-left-radius: 90px;
+                border-top-right-radius: 80px;
             }
             20% {
-                border-top-left-radius: 70px;
+                border-top-left-radius: 90px;
                 border-top-right-radius: 90px;
             }
             25% {
-                border-top-left-radius: 80px;
+                border-top-left-radius: 90px;
                 border-top-right-radius: 80px;
             }
             30% {
-                border-top-left-radius: 90px;
-                border-top-right-radius: 70px;
+                border-top-left-radius: 100px;
+                border-top-right-radius: 80px;
             }
             70% {
-                border-top-left-radius: 90px;
-                border-top-right-radius: 70px;
+                border-top-left-radius: 100px;
+                border-top-right-radius: 80px;
             }
             75% {
-                border-top-left-radius: 80px;
+                border-top-left-radius: 90px;
                 border-top-right-radius: 80px;
             }
             80% {
-                border-top-left-radius: 70px;
+                border-top-left-radius: 90px;
                 border-top-right-radius: 90px;
             }
             100% {
-                border-top-left-radius: 70px;
+                border-top-left-radius: 90px;
                 border-top-right-radius: 90px;
             }
         }
@@ -289,6 +363,7 @@
             top: 35%;
             animation: move 10s infinite linear;
         }
+
         @keyframes move {
             0% {left: 60%;}
             20% {left: 60%;}
@@ -309,7 +384,7 @@
         .jelly-eye::before {
             content: '';
             position: absolute;
-            left: 60px;
+            left: 50px;
             width: 35px;
             height: 35px;
             background-color: #000000;
@@ -328,14 +403,15 @@
 
         .jelly-eye1 {
             position: absolute;
-            bottom: 1;
+            bottom: -3px;
             z-index: 2;
+            left: 5px;
         }
 
         .jelly-eye1::before {
             content: '';
             position: absolute;
-            left: 60px;
+            left: 50px;
             width: 20px;
             height: 15px;
             background-color: #ffffff;
@@ -346,30 +422,115 @@
             content: '';
             position: absolute;
             left: -60px;
-            width: 20;
+            width: 20px;
             height: 15px;
             background-color: #ffffff;
             border-radius: 50%;
         }
 
+        .jelly-eye2 {
+            position: absolute;
+            bottom: -23px;
+            z-index: 2;
+            left: 10px;
+        }
+
+        .jelly-eye2::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            width: 15px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 40%;
+        }
+
+        .jelly-eye2::after {
+            content: '';
+            position: absolute;
+            left: -60px;
+            width: 15px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 40%;
+        }
+
+        @keyframes blink {
+            0%, 2%, 100% { transform: scaleY(1); }
+            1% { transform: scaleY(0); }
+        }
+
+        .jelly-eye, .jelly-eye1, .jelly-eye2,
+        .jelly-eye::before, .jelly-eye::after, 
+        .jelly-eye1::before, .jelly-eye1::after, 
+        .jelly-eye2::before, .jelly-eye2::after {
+            animation: blink 5s infinite; /* 전체 애니메이션 사이클을 5초로 설정 */
+            transform-origin: center bottom;
+        }
+
+        .jelly-cheek {
+            position: absolute;
+            top: 5px;
+            z-index: 2;
+            left: 3px;
+            box-shadow: 0 2px #cd6f9a;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .jelly-cheek::before  {
+            content: '';
+            position: absolute;
+            left: 55px;
+            width: 40px;
+            height: 15px;
+            background-color: #fecadee7;
+            box-shadow: 0 2px #ffffff;
+            border-radius: 50%;
+        }
+
+        .jelly-cheek::after {
+            content: '';
+            position: absolute;
+            left: -80px;
+            width: 40px;
+            height: 15px;
+            background-color: #fecadee7;
+            box-shadow: 0 2px #ffffff;
+            border-radius: 50%;
+        }
+
         .jelly-mouth {
             position: absolute;
-            width: 200px;
-            height: 80px;
-            background-color: #f4cfd1;
-            border-radius: 30px;
-            transform: translateX(-50%);
+            width: 30px;
+            height: 10px; /* 높이를 줄여서 위쪽 반원만 보이도록 함 */
+            border-radius: 15px / 7.5px; /* 가로 반지름 / 세로 반지름으로 위쪽 반원 모양 생성 */
+            background-color: #0a0a0a; /* 입의 색상 */
+            transform: translate(-50%, 0); /* 중앙 정렬 */
+            top: 5px; /* 상위 요소 대비 중앙에 위치하도록 설정 */
+            left: 20px;
         }
 
         .jelly-mouth::before {
             content: '';
             position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 60%;
-            height: 1px;
-            background-color: #ff9393;
-            transform: translateX(-50%);
+            left: 80%;
+            top: 70%;
+            width: 20%;
+            height: 10px;
+            background-color: #ffffff;
+            transform: translateX(-60%);
+            border-radius: 50%;
+            box-shadow: 0 2px 0 #b4b4b4;
+        }
+
+        .jelly-mouth::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 10px; /* 아래쪽 반원을 만들기 위해 높이 조정 */
+            border-radius: 15px / 7.5px; /* 반원 모양 */
+            background-color: #0a0a0a; /* 입 색상과 동일 */
+            transform: translateX(-60%); /* 중앙 정렬 */
         }
 
         .jelly-hand {
@@ -380,7 +541,7 @@
             content: '';
             width: 45px;
             height: 50px;
-            box-shadow: 0 5px 6px #3b949b;
+            box-shadow: 0 5px 6px #696969;
             position: absolute;
             left: 105px;
             border-radius: 0 0 50% 50%;
@@ -390,7 +551,7 @@
             content: '';
             width: 45px;
             height: 50px;
-            box-shadow: 0 5px 6px #3b949b;
+            box-shadow: 0 5px 6px #696969;
             position: absolute;
             left: -150px;
             border-radius: 0 0 50% 50%;
@@ -399,62 +560,81 @@
         .jelly-tentacle1 {
             width: 50px;
             height: 50px;
-            background-color: #ebf28a;
+            background-color: #ae2626;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 0;
-            box-shadow: 0 2px #008d98;
-            animation: tentacle 1s infinite ease-in;
+            box-shadow: 0 2px #ffffff;
+            animation-delay: 0s, 0.2s;
+            animation: tentacle 1s infinite ease-in, tentacle-move 1s infinite ease-in, breathe-tentacle 3s infinite ease-in-out;
         }
 
         .jelly-tentacle2 {
             width: 50px;
             height: 50px;
-            background-color: #ebf28a;
+            background-color: #ae2626;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 20%;
-            box-shadow: 0 2px #008d98;
-            animation: tentacle 1s infinite ease-in -0.1s;
+            box-shadow: 0 2px #ffffff;
+            animation-delay: 0s, 0.9s;
+            animation: tentacle 1s infinite ease-in -0.1s, tentacle-move 1s infinite ease-in, breathe-tentacle 3s infinite ease-in-out;
         }
 
         .jelly-tentacle3 {
             width: 50px;
             height: 50px;
-            background-color: #ebf28a;
+            background-color: #ae2626;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 40%;
-            box-shadow: 0 2px #008d98;
-            animation: tentacle 1s infinite ease-in -0.9s;
+            box-shadow: 0 2px #ffffff;
+            animation: tentacle 1s infinite ease-in -0.9s, tentacle-move 1s infinite ease-in, breathe-tentacle 3s infinite ease-in-out;
         }
 
         .jelly-tentacle4 {
             width: 50px;
             height: 50px;
-            background-color: #ebf28a;
+            background-color: #ae2626;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 60%;
-            box-shadow: 0 2px #008d98;
-            animation: tentacle 1s infinite ease-in -0.5s;
+            box-shadow: 0 2px #ffffff;
+            animation: tentacle 1s infinite ease-in -0.5s, tentacle-move 1s infinite ease-in, breathe-tentacle 3s infinite ease-in-out;
         }
 
         .jelly-tentacle5 {
             width: 50px;
             height: 50px;
-            background-color: #ebf28a;
+            background-color: #ae2626;
             border-radius: 0 0 50% 50%;
             position: absolute;
             left: 80%;
-            box-shadow: 0 2px #008d98;
-            animation: tentacle 1s infinite ease-in -0.1s;
+            box-shadow: 0 2px #ffffff;
+            animation: tentacle 1s infinite ease-in -0.1s, tentacle-move 1s infinite ease-in, breathe-tentacle 3s infinite ease-in-out;
         }
         @keyframes tentacle {
             0% {bottom: 15px;}
             50% {bottom: 35px;}
             100% {bottom: 15px;}
         }
+
+        @keyframes breathe-tentacle {
+            0%, 100% {
+            transform: scaleX(1.05);
+        }
+            50% {
+            transform: scaleX(1.27); /* 젤리의 숨쉬기에 맞춰 tentacle의 넓이를 조금 늘립니다 */
+        }
+        }
+
+        @keyframes tentacle-move {
+        /* 기존 tentacle 애니메이션을 유지합니다 */
+            0% {bottom: 15px;}
+            50% {bottom: 25px;}
+            100% {bottom: 15px;}
+        }
+
     </style>
 </head>
 
@@ -472,13 +652,17 @@
         <div class="bubble-10"></div>
 
         <div class="jelly-wrapper">
-            <div class="jelly-hair"></div>
+            <div class="jelly-hair">
+                <div class="jelly-hair1"></div>
+            </div>
             <div class="jelly-body">
                 <div class="jelly-inner">
                     <div class="jelly-eye">
                         <div class="jelly-eye1"></div>
+                        <div class="jelly-eye2"></div>
                     </div>
                     <div class="jelly-mouth"></div>
+                    <div class="jelly-cheek"></div>
                     <div class="jelly-hand"></div>
                 </div>
             </div>
