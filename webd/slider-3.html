@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider-3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1200px;
+            height: 700px;
+            /* 블록구조 가운데 정렬 */
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 1200px;
+            display: flex;
+        }
+
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #e4ffe0;
+        }
+
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #bcd7ab;
+        }
+
+        #slider {
+            width: 1200px;
+            height: 300px;
+            background-color: #e6fabf;
+        }
+
+        #contents {
+            width: 1200px;
+            display: flex;
+        }
+
+        #contents .content1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #accbad;
+        }
+
+        #contents .content2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #cdefd3;
+        }
+
+        #contents .content3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c6dcb5;
+        }
+
+        #footer {
+            width: 1200px;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #c7e9dc;
+        }
+
+        #footer .footer2 {
+            width: 50%;
+            height: 100px;
+            background-color: #9bd1cb;
+        }
+
+        #footer .footer3 {
+            width: 30%;
+            height: 100px;
+            background-color: #87d8cf;
+        }
+
+        /* nav */
+
+        #slider {
+            overflow: hidden;
+        }
+
+        .sliderWrap .slider {
+            position: relative;
+        }
+
+        .sliderWrap .slider img {
+            vertical-align: top;
+        }
+
+        .sliderWrap .slider span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </div>
+        <!-- //header -->
+
+        <div id="slider">
+            <div class="sliderWrap">
+                <div class="slider s1">
+                    <img src="../webd/img/slide.01.jpg" alt="이미지1">
+                    <span>이미지1</span>
+                </div>
+                <div class="slider s2">
+                    <img src="../webd/img/slide.02.jpg" alt="이미지1">
+                    <span>이미지2</span>
+                </div>
+                <div class="slider s3">
+                    <img src="../webd/img/slide.03.jpg" alt="이미지1">
+                    <span>이미지3</span>
+                </div>
+            </div>
+        </div>
+        <!-- //slider -->
+
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <!-- contents -->
+
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //main -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let currentIndex = 0; //현재 이미지 설정
+            $(".sliderWrap").append($(".slider").first().clone(true)); // 첫번째 이미지를 복사해서 마지막에 추가
+
+            setInterval(function () {    //3초에 한번씩 실행 //0 3 6 9
+                currentIndex++;     // 현재 이미지를 1씩 증가
+                $(".sliderWrap").animate({ marginTop: -currentIndex * 300 + "px" }, 600);
+
+                if (currentIndex == 3) {    // 마지막 이미지 
+                    setTimeout(function () {
+                        $(".sliderWrap").animate({ marginTop: 0 }, 0);  // 애니메이션 초기화
+                        currentIndex = 0;   // 현재 이미지를 초기화
+                    }, 700);
+                }
+            }, 3000);
+        });
+    </script>
+
+</body>
+
+</html>

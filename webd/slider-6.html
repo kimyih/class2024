@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide-</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+
+        }
+
+        #main {
+            width: 100%;
+            height: calc(100vh - 120px);
+            display: flex;
+        }
+
+        #header {
+            width: 200px;
+            height: 100%;
+            background-color: #e4adff;
+        }
+
+        #header .logo {
+            height: 10%;
+            background-color: #d59be1;
+        }
+
+        #header .nav {
+            height: 90%;
+            background-color: #ff74f3;
+        }
+
+        #contents {
+            width: 400px;
+            height: 100%;
+            background-color: #ff85c6;
+        }
+
+
+        #contents .notice {
+            height: 40%;
+            background-color: #ffa0e2;
+        }
+
+        #contents .gallery {
+            height: 40%;
+            background-color: #e29fff;
+        }
+
+        #contents .link {
+            height: 20%;
+            background-color: #ed86ff;
+        }
+
+        #slider {
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #ebbcf3;
+        }
+
+        #footer {
+            width: 100%;
+            height: 120px;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #f3a0e0;
+        }
+
+        #footer .footer2 {
+            width: 80%;
+            height: 120px;
+            background-color: #d5b3d7;
+        }
+
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #ff9ece;
+        }
+
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #f36cb0;
+        }
+
+
+        /* slide */
+
+        #slider {
+            overflow: hidden;
+            height: calc(100vh - 120px);
+        }
+
+        .sliderWrap {
+            width: 100%;
+            height: 300vh;
+        }
+
+        .sliderWrap .slider {
+            width: 100%;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+
+        }
+
+        .sliderWrap .slider.s1 {
+            background-image: url(https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider04.jpg);
+        }
+
+        .sliderWrap .slider.s2 {
+            background-image: url(https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider05.jpg);
+        }
+
+        .sliderWrap .slider.s3 {
+            background-image: url(https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider06.jpg);
+        }
+
+        .sliderWrap .slider img {
+            vertical-align: top;
+        }
+
+        .sliderWrap .slider span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <main id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <h1 class="menu"></h1>
+            </header>
+            <!-- <//header> -->
+
+            <section id="contents">
+                <article class="notice"></article>
+                <article class="gallery"></article>
+                <article class="link"></article>
+            </section>
+            <!-- //contents -->
+
+            <article id="slider">
+                <div class="sliderWrap">
+                    <div class="slider s1">
+                        <span>이미지1</span>
+                    </div>
+                    <div class="slider s2">
+                        <span>이미지2</span>
+                    </div>
+                    <div class="slider s3">
+                        <span>이미지3</span>
+                    </div>
+                </div>
+            </article>
+            <!-- //slide -->
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //main -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let currentIndex = 0; // 현재 이미지 설정
+        $(".sliderWrap").append($(".slider").first().clone(true));
+        setInterval(() => {
+            currentIndex++;     // 현재 이미지를 1씩 증가
+            $(".sliderWrap").animate({ marginTop: - 100 * currentIndex + "vh" }, 600);
+
+            if (currentIndex == 3) {
+                setTimeout(() => {
+                    $(".sliderWrap").animate({ marginTop: 0 }, 0);
+                    currentIndex = 0;
+                }, 700);
+            }
+        }, 3000);
+    </script>
+</body>
+
+</html>
