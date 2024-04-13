@@ -78,3 +78,8 @@ json 파일 받은 것중 새로 정답이 3,4 글자 이하들만 걸러내기 
 레이아웃 부족한 부분 보고 오기
 
 ## 터미널 저장 방법
+📌 git init                                            # Git 저장소 초기화
+📌 git add .                                           # 변경 사항 스테이징
+📌 git commit -m "Initial commit"                      # 변경 사항 커밋
+📌 git remote add origin <GitHub repository URL>       # 원격 저장소 추가
+📌 git push -u origin master                           # 변경 사항 푸시
