@@ -718,19 +718,26 @@
             <!-- //sample19 -->
 
             <div id="sample20" class="sample">
-                <h3>20. 함수 유형 : 객체 리터럴 함수 </h3><br>
+                <h3>20. 함수 : 즉시실행 함수</h3><br>
                 <p>
 
                 </p>
                 <pre><code>{
+    (function () {
+        console.log("15. 실행되었습니다.")
+    })();
 
+    // 화살표 함수 호출문을 생략함 
+    (() => {
+        console.log("16. 실행되었습니다.")
+    })();
 }</code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            23. 함수가 실행되었습니다. <br>
-                            24. 함수가 실행되었습니다.
+                            15. 실행되었습니다. <br>
+                            16. 실행되었습니다.
                         </div>
                     </details>
                 </div>
@@ -755,24 +762,6 @@
         </div>
         <!-- //sample21 -->
 
-        <div id="sample22" class="sample">
-            <h3> </h3><br>
-            <p>
-
-            </p>
-            <pre><code>{
-
-}</code></pre>
-            <div class="result">
-                <details>
-                    <summary>결과 확인하기</summary>
-                    <div>
-                        \
-                    </div>
-                </details>
-            </div>
-        </div>
-        <!-- //sample22 -->
     </main>
     <!-- //main -->
     <footer id="footer">

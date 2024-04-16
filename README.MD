@@ -1,7 +1,6 @@
  # 오늘의 수업   
  
  [메인페이지](https://kimyih.github.io/class2024/)   
-
  [자바스크립트](https://kimyih.github.io/class2024/javascript/index.html)   
  [MySQL](https://kimyih.github.io/class2024/mysql/index.html)   
  [Quiz](https://kimyih.github.io/class2024/quiz/index.html)      
@@ -75,5 +74,12 @@
 문제 시작시 표지 바꾼걸로 교체
 단답형 세글자, 네글자로만 가능하게 
 json 파일 받은 것중 새로 정답이 3,4 글자 이하들만 걸러내기 (문제 변경 해야함)
-유튜브 메인유형 - 슬라이드 유형 다 보고 오기 + 따라하기
+유튜브 메인유형, 슬라이드 유형 다 보고 오기 + 따라하기
 레이아웃 부족한 부분 보고 오기
+
+
+블록 구조 안엔 인라인이 들어갈 수 있음
+인라인 구족 안에 블록이 들어갈 수 없음 
+
+유일하게 인라인안에 블록 구조가 들어갈 수 있는건 a링크 
+li 안에 a 링크 넣어주는 이유 : 탭으로 선택해주려고

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>slider-3</title>
+    <title>slider-1</title>
     <style>
         * {
             margin: 0;
@@ -87,14 +87,24 @@
             background-color: #87d8cf;
         }
 
-        /* nav */
+        /* //slider */
 
-        #slider {
-            overflow: hidden;
+        .sliderWrap {
+            position: relative;
+        }
+
+        .sliderWrap>div {
+            display: none;
+        }
+
+        .sliderWrap>div:first-child {
+            display: block;
         }
 
         .sliderWrap .slider {
-            position: relative;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .sliderWrap .slider img {
@@ -108,6 +118,7 @@
             transform: translate(-50%, -50%);
             background-color: rgba(0, 0, 0, 0.4);
             padding: 10px 20px;
+            color: #ffff;
         }
     </style>
 </head>
@@ -152,28 +163,25 @@
         </div>
         <!-- //footer -->
     </div>
-    <!-- //main -->
+    <!-- //wrap -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-            let currentIndex = 0; //현재 이미지 설정
-            $(".sliderWrap").append($(".slider").first().clone(true)); // 첫번째 이미지를 복사해서 마지막에 추가
+            let currentIndex = 0;   // 현재 이미지
 
-            setInterval(function () {    //3초에 한번씩 실행 //0 3 6 9
-                currentIndex++;     // 현재 이미지를 1씩 증가
-                $(".sliderWrap").animate({ marginTop: -currentIndex * 300 + "px" }, 600);
+            setInterval(function () {   // 3초에 한번씩 실행해라
+                let nextIndex = (currentIndex + 1) % 3; //1 2 0 1 2 무한반복
 
-                if (currentIndex == 3) {    // 마지막 이미지 
-                    setTimeout(function () {
-                        $(".sliderWrap").animate({ marginTop: 0 }, 0);  // 애니메이션 초기화
-                        currentIndex = 0;   // 현재 이미지를 초기화
-                    }, 700);
-                }
-            }, 3000);
+                $(".slider").eq(currentIndex).fadeOut();   //첫번째 이미지 사라짐 
+                $(".slider").eq(nextIndex).fadeIn();    //두번째 이미지 나타남
+
+                currentIndex = nextIndex    // 두번째 인덱스값을 현재 인데스값에 저장 시킴 
+                // test.. 젭알 돼..
+
+            }, 3000)
         });
     </script>
-
 </body>
 
 </html>
