@@ -88,7 +88,7 @@
 
         // 1초에 한 번씩 currentIndex 1씩 증가
         let currentIndex = 0;
-        $(".slider-wrap").append($(".slider").first().clone)
+        $(".slider-wrap").append($(".slider").first().clone(true));
 
         setInterval(() => {
             $(".slider-wrap").animate({ marginLeft: -1200 * currentIndex + "px" }, 400)
