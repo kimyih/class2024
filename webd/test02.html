@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #slider {
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+
+        #slider-wrap {
+            display: flex;
+            width: 6000px;
+        }
+
+        #slider-wrap .slider {
+            width: 1200px;
+            height: 300px;
+            background-color: red;
+            text-align: center;
+            font-size: 24px;
+            line-height: 300px;
+        }
+
+        #slider-wrap .slider.s2 {
+            background-color: aquamarine;
+        }
+
+        #slider-wrap .slider.s3 {
+            background-color: beige;
+        }
+
+        #slider-wrap .slider.s4 {
+            background-color: maroon;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="slider">
+        <div id="slider-wrap">
+            <div class="slider s1">slider1</div>
+            <div class="slider s2">slider2</div>
+            <div class="slider s3">slider3</div>
+            <div class="slider s4">slider4</div>
+            <!-- <div class="slider s4">slider5</div> -->
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+
+        // 1번째 이미지를 클릭하면 삭제해주세요.
+        // $(function () {
+        //     $(".slider_wrap .slider.s1").click(function () {
+        //         $("this").hide();
+        //     });
+        // });
+
+        // 1번 째 이미지를 클릭하면 1번째 3번째만 삭제해주세요!
+        // $(function () {
+        //     $(".slider_wrap .slider.s1").click(function () {
+        //         $(".slider_wrap .slider.s1").hide()
+        //         $(".slider_wrap .slider.s3").hide()
+        //     });
+        // });
+
+        // 2번째 이미지를 클릭하면 currentIndex 값을 경고착으로 표시해주세요
+        // $(function () {
+        //     $(".slider_wrap .slider.s2").click(function () {
+        //         alert(currentIndex)
+        //     });
+        // });
+
+
+        // 1초에 한 번씩 currentIndex 1씩 증가
+        let currentIndex = 0;
+        $(".slider-wrap").append($(".slider").first().clone)
+
+        setInterval(() => {
+            $(".slider-wrap").animate({ marginLeft: -1200 * currentIndex + "px" }, 400)
+
+            if (currentIndex == 3) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                }, 1000)
+            }
+
+            currentIndex++;
+        }, 3000)
+    </script>
+
+</body>
+
+</html>
