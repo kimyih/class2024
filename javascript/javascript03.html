@@ -745,22 +745,270 @@
             <!-- //sample20 -->
 
             <div id="sample21" class="sample">
-                <h3> </h3><br>
+                <h3>21. 함수 : 파라미터 함수</h3><br>
                 <p>
 
                 </p>
                 <pre><code>{
+    function func(str = "17. 실행되었습니다.") {
+        console.log(str)
+    }
+    func();
 
+    // 익명 함수 
+    const func1 = (str = "18. 실행되었습니다.") => {
+        console.log(str)
+    }
+    func1();
 }</code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
-
+                        <div>
+                            17. 실행되었습니다. <br>
+                            18. 실행되었습니다.
+                        </div>
+                    </details>
                 </div>
-                </details>
             </div>
-        </div>
-        <!-- //sample21 -->
+            <!-- //sample21 -->
+
+            <div id="sample22" class="sample">
+                <h3>22. 함수 : 재귀 함수 </h3><br>
+                <p>
+
+                </p>
+                <pre><code>{
+    // 01 반복문을 사용하는 경우
+    function func(num) {
+        for (let i = 0; i < num; i++) {
+            console.log("19. 실행되었습니다.")
+        }
+    }
+    func(10);
+
+    // 02 재귀함수를 사용하기
+    function func1(num) {
+        if (num < 1) return;
+
+        console.log("20. 실행되었습니다.")
+        func1(num - 1); //재귀 호출
+    }
+    func1(10)
+
+    // 재귀 함수랑 콜백 함수의 차이점을 알아야 함
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            19. 실행되었습니다. <br>
+                            20. 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample22 -->
+
+            <div id="sample23" class="sample">
+                <h3>23. 함수 : 콜백 함수 </h3><br>
+                <p>
+                    // 정의 : 함수에 파라미터로 들어가는 함수
+                    // 용도 : 순차적으로 실행하고 싶을 때 씀
+                </p>
+                <pre><code>{
+    // 01 이벤트
+    function func() {
+        console.log("21. 실행되었습니다.");
+    }
+    // btn.addEventListener("click", func);
+
+    // 02 함수가 다른 함수의 인자로전달 
+    function func1() {
+        console.log("22. 실행되었습니다.")
+    }
+    function func2(callback) {
+        callback();
+    }
+    func2(func1)
+
+    // 03 반복문을 사용하는 경우
+    function func3(num) {
+        console.log(num + ". 실행되었습니다.")
+    }
+    function func4(callback) {
+        for (let i = 23; i <= 28; i++) {
+            callback(i)
+        }
+    }
+    func4(func3)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            21. 실행되었습니다. <br>
+                            22. 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample23 -->
+
+            <div id="sample24" class="sample">
+                <h3>23. 함수 : 콜백 함수 </h3><br>
+                <p>
+                    // 동기 :
+                    // 작업이 순서대로
+                    // 코드는 위에서 아래로 순차적으로 진행. 한 작업이 끝나면 다음 작업이 시작
+
+                    // 비동기 : 작업이 순서와 관계
+                    // 작업이 순서와 관계 없이 여러 작업 처리할 수 있음
+                    // 콜백함수, 프로미스, asyne/await 등을 사용하여 작업이 완료될 때 까지 대히가지 않고 다른 작업을 진행할 수 있음
+                </p>
+                <pre><code>{
+    // 01. 동기적인 함수 호춯
+    function func1() {
+        console.log("29. 싱행되었습니다.")
+    }
+    function func2() {
+        console.log("30. 싱행되었습니다.")
+    }
+    func1()
+    func2()
+
+    // 02 비동기적인 함수 호출
+    function func3() {
+        setTimeout(() => {
+            console.log("31. 실행되었습니다.")
+        }, 1000)
+    }
+    function func4() {
+        console.log("32. 싱행되었습니다.")
+    }
+    func3();
+    func4();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            29. 실행되었습니다. <br>
+                            30. 실행되었습니다. <br>
+                            31. 실행되었습니다. <br>
+                            32. 실행되었습니다. <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample24 -->
+
+            <div id="sample25" class="sample">
+                <h3>23. 함수 : 콜백 함수 </h3><br>
+                <p>
+                    // 동기 :
+                    // 작업이 순서대로
+                    // 코드는 위에서 아래로 순차적으로 진행. 한 작업이 끝나면 다음 작업이 시작
+
+                    // 비동기 : 작업이 순서와 관계
+                    // 작업이 순서와 관계 없이 여러 작업 처리할 수 있음
+                    // 콜백함수, 프로미스, asyne/await 등을 사용하여 작업이 완료될 때 까지 대히가지 않고 다른 작업을 진행할 수 있음
+                </p>
+                <pre><code>{
+    // 01. 동기적인 함수 호춯
+    function func1() {
+        console.log("29. 싱행되었습니다.")
+    }
+    function func2() {
+        console.log("30. 싱행되었습니다.")
+    }
+    func1()
+    func2()
+
+    // 02 비동기적인 함수 호출
+    function func3() {
+        setTimeout(() => {
+            console.log("31. 실행되었습니다.")
+        }, 1000)
+    }
+    function func4() {
+        console.log("32. 싱행되었습니다.")
+    }
+    func3();
+    func4();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            29. 실행되었습니다. <br>
+                            30. 실행되었습니다. <br>
+                            31. 실행되었습니다. <br>
+                            32. 실행되었습니다. <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample25 -->
+
+            <div id="sample26" class="sample">
+                <h3>26. 함수 : 비동기 방식 : asyne/await </h3><br>
+                <p>
+                    // 동기 :
+                    // 작업이 순서대로
+                    // 코드는 위에서 아래로 순차적으로 진행. 한 작업이 끝나면 다음 작업이 시작
+
+                    // 비동기 : 작업이 순서와 관계
+                    // 작업이 순서와 관계 없이 여러 작업 처리할 수 있음
+                    // 콜백함수, 프로미스, asyne/await 등을 사용하여 작업이 완료될 때 까지 대히가지 않고 다른 작업을 진행할 수 있음
+                </p>
+                <pre><code>{
+    // 01 : 일반적인 함수 (동기방식)
+    function func() {
+        console.log("35. 실행되었습니다.")
+    }
+    func();
+
+    // 02 :  함수 (비동기방식)
+    async function func2() {
+        console.log("36. 실행되었습니다.")
+    }
+    func2();
+
+    // 03. : 비동기 방식 (fetch())
+    async function func3() {
+        const result = await fetch("https://kimyih.github.io/class2024/json/gineungsaJC2005_02.json")
+        const data = await result.json();
+        console.log(data);
+    }
+    func3();
+
+    // 04. 비동기 + 에러 
+    async function func4() {
+        try {
+            const result = await fetch("https://kimyih.github.io/class2024/json/gineungsaJC2005_02.json")
+            const data = await result.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    func4();
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            29. 실행되었습니다. <br>
+                            30. 실행되었습니다. <br>
+                            31. 실행되었습니다. <br>
+                            32. 실행되었습니다. <br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample26 -->
+
 
     </main>
     <!-- //main -->
@@ -1010,7 +1258,7 @@
                 }, 1000)
             }
             function func4() {
-                console.log("32. 싱행되었습니다.")
+                console.log("32. 실행되었습니다.")
             }
             func3();
             func4();

@@ -6,9 +6,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
 
+    <style>
+        body {
+            cursor: none;
+        }
+
+        .main__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main__inner p {
+            color: #d2d2d2;
+            padding: 10vw;
+            font-size: 2.4vmax;
+            text-align: center;
+            font-family: "Dosis";
+            font-weight: 300;
+            transition: filter 0.3s;
+        }
+
+        .main__inner p em,
+        .main__inner p span,
+        .main__inner p i,
+        .main__inner p strong {
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .main__info {
+            position: absolute;
+            left: 16px;
+            top: 68px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .main__info ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main__info ul li {
+            width: 25%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Dosis';
+            color: #dbdbdb;
+            font-weight: 200;
+        }
+
+        .cursor {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff43;
+            border: 1px solid #ffffff20;
+            backdrop-filter: blur(5px);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            border-radius: 50%;
+            z-index: 10000;
+            pointer-events: none;
+            transform: 0.5;
+            /* transition:
+                background-color 0.3s,
+                border 0.3s,
+                border-radius 0.3s,
+                transform 0.5 */
+        }
+
+        .cursor.span1 {
+            background-color: #aa4c4c33;
+            border: 1px solid #ff626220;
+        }
+
+        .cursor.span1 ::before {
+            background-color: #fff;
+        }
+
+        .cursor.span1 ::after {
+            background-color: #fff;
+        }
+
+        /* //.cursor.span1 */
+
+        .cursor.span2 {
+            background-color: #4c99aa33;
+            border: 1px solid #62b6ff20;
+            transform: scale(0.5);
+        }
+
+        .cursor.span2 ::before {
+            background-color: #fff;
+        }
+
+        .cursor.span2 ::after {
+            background-color: #fff;
+        }
+
+        /* //em */
+
+        .cursor.span3 {
+            background-color: #ff7acc1c;
+            border: 1px solid #ff20c020;
+            border-radius: 1%;
+            transform: rotate(720deg) scale(2)
+        }
+
+        .cursor.span3 ::before {
+            background-color: #fff;
+        }
+
+        .cursor.span3 ::after {
+            background-color: #fff;
+        }
+
+        .cursor:before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor::after {
+            content: '';
+            width: 1px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 
 <body>
@@ -22,16 +162,28 @@
         <!-- //header -->
 
         <main id="main">
+            <div class="cursor"></div>
             <div class="main__inner">
                 <p>
-                    JavaScript is a dynamic programming language used both on client-side and server-side, enhancing web
+                    JavaScript is a dynamic <span>programming</span> language used both on client-side and server-side,
+                    enhancing web
                     interactivity and functionality. It integrates seamlessly with HTML and CSS, contributing to webpage
                     behavior, layout, and design. Supporting various programming paradigms, JavaScript is adaptable for
-                    diverse development needs. Key frameworks like React, Angular, and Vue.js leverage JavaScript to
-                    streamline complex web application development. Its capability to update web content dynamically
+                    diverse development needs. <span>Key</span> frameworks like React, Angular, and Vue.js leverage
+                    <span>JavaScript</span>
+                    to
+                    streamline complex web application development. Its <span>capability</span> to update web
+                    content dynamically
                     without page reloads makes it essential for modern web experiences.
                 </p>
-
+            </div>
+            <div class="main__info">
+                <ul>
+                    <li>clientX <span class="clientX">0</span></li>
+                    <li>offsetX <span class="offsetX">0</span></li>
+                    <li>pageX <span class="pageX">0</span></li>
+                    <li>scrennX <span class="scrennX">0</span></li>
+                </ul>
             </div>
         </main>
         <!-- //main -->
@@ -51,6 +203,66 @@
         <!-- //footer -->
     </div>
 
+    <script>
+        // 윈도우에서 이벤트를 한다 마우스가 움직일 때 
+        window.addEventListener("mousemove", function (event) {
+            console.log(event);
+
+            //마우스 움직이는 결과값 ㅌㄹ
+            document.querySelector(".clientX").innerText = event.clientX;
+            document.querySelector(".offsetX").innerText = event.offsetX
+            document.querySelector(".pageX").innerText = event.pageX
+            document.querySelector(".scrennX").innerText = event.scrennX
+        });
+
+        // mouse 
+        const cursor = document.querySelector(".cursor");
+
+        window.addEventListener("mousemove", function (e) {
+            cursor.style.left = e.clientX - 50 + "px";
+            cursor.style.top = e.clientY - 50 + "px";
+        });
+
+        document.querySelector(".main__inner p span:nth-child(1)").addEventListener("mouseover", function () {
+            cursor.classList.add("span1");
+        });
+        document.querySelector(".main__inner p span:nth-child(1)").addEventListener("mouseout", function () {
+            cursor.classList.remove("span1");
+        });
+
+        document.querySelector(".main__inner p span:nth-child(2)").addEventListener("mouseover", function () {
+            cursor.classList.add("span2");
+        });
+        document.querySelector(".main__inner p span:nth-child(2)").addEventListener("mouseout", function () {
+            cursor.classList.remove("span2");
+        });
+
+        document.querySelector(".main__inner p span:nth-child(3)").addEventListener("mouseover", function () {
+            cursor.classList.add("span3");
+        });
+        document.querySelector(".main__inner p span:nth-child(3)").addEventListener("mouseout", function () {
+            cursor.classList.remove("span3");
+        });
+
+        document.querySelector(".main__inner p span:nth-child(4)").addEventListener("mouseover", function () {
+            cursor.classList.add("span4");
+        });
+        document.querySelector(".main__inner p span:nth-child(4)").addEventListener("mouseout", function () {
+            cursor.classList.remove("span4");
+        });
+
+
+
+        // for (let i = 2; i <= 4; i++) {
+        //     const span = document.querySelector(`.main__inner p span:nth-child(${i})`);
+        //     span.addEventListener('mouseover', () => cursor.classList.add(`span${i}`));
+        //     span.addEventListener('mouseout', () => cursor.classList.remove(`span${i}`));
+        // }
+
+
+
+
+    </script>
 </body>
 
 </html>
