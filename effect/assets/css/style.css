@@ -83,8 +83,12 @@ li {
     line-height: 1;
 }
 
-.footer__inner ul li a {
+.footer__inner ul li a:hover {
     background-color: #fff;
     color: black;
+}
 
+.footer__inner ul li.active a {
+    background-color: #ffffff;
+    color: #000000;
 }

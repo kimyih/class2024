@@ -192,10 +192,10 @@
             <div class="footer__inner">
                 <nav>
                     <ul>
-                        <li><a href="#">01</a></li>
-                        <li><a href="#">02</a></li>
-                        <li><a href="#">03</a></li>
-                        <li><a href="#">04</a></li>
+                        <li class="active"><a href="mouse01.html">01</a></li>
+                        <li><a href="mouse02.html">02</a></li>
+                        <li><a href="mouse03.html">03</a></li>
+                        <li><a href="mouse04.html">04</a></li>
                     </ul>
                 </nav>
             </div>
@@ -208,7 +208,7 @@
         window.addEventListener("mousemove", function (event) {
             console.log(event);
 
-            //마우스 움직이는 결과값 ㅌㄹ
+            //마우스 움직이는 결과값
             document.querySelector(".clientX").innerText = event.clientX;
             document.querySelector(".offsetX").innerText = event.offsetX
             document.querySelector(".pageX").innerText = event.pageX
