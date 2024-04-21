@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz02</title>
+
+    <link rel="stylesheet" href="assets/css/c-quiz02.css">
+</head>
+
+<body>
+    <div id="quiz__wrap">
+        <div class="quiz__play none">
+            <div class="quiz__header">
+                <div class="timer">
+                    남은 시간: <span id="timeRemaining">30:00</span>
+                </div>
+
+                <span class="date"></span>
+                <span class="type"></span>
+            </div>
+            <!-- <span class="number">01/100</span> -->
+            <div class="question"></div>
+            <div class="desc"></div>
+            <div class="View__problem"></div>
+            <div class="answer">
+                <input type="text" id="userAnswer" placeholder="정답을 입력하세요!">
+            </div>
+            <div class="answer2 none"> 정답:</div>
+            <div class="desc none">설명:</div>
+            <div class="confirm">
+                <button>확인하기</button>
+                <button>다음문제</button>
+            </div>
+            <div class="score"></div>
+        </div>
+        <div class="quiz__start">
+            <div class="title">
+                <span></span>
+            </div>
+            <div class="text">
+                <span><i>100문제</i> <strong>주관식 </strong> 실기 기출문제</span>
+                <h1>정보처리기능사<br>실기주관식</h1>
+                <ul>
+                    <li>정보처리기능사 실기 단답형 100문제입니다.</li>
+                    <li>통과 점수는 90점이며, 시간제한은 30분입니다. </li>
+                    <li>시간 제한은 30분입니다. </li>
+                </ul>
+            </div>
+            <div class="btn">
+                <button>시작하기</button>
+            </div>
+        </div>
+        <!-- quiz__start -->
+
+        <script>
+            // const quizWrap = document.querySelector(".quiz__wrap");
+
+            const quizPlay = document.querySelector(".quiz__play");
+            let quizInfo = [];
+            let currentIndex = 0;   // 퀴즈 info 배열의 index 값
+            let correctCount = 0;   // 퀴즈 맞은 갯수
+            let incorrectCount = 0;     // 퀴즈 틀린 갯수
+
+            const fetchQuiz = () => {
+                fetch("https://123dd654.github.io/class2024/quiz/gineungsaJC2020.json")
+                    .then(res => res.json())
+                    .then(items => {
+                        quizInfo = items.map(item => ({
+                            date: "2020년 3회",
+                            type: item.time,
+                            question: item.question,
+                            desc: item.question_desc,
+                            answer: item.correct_answer
+                        }));
+                        console.log(quizInfo);
+
+                        presentQuiz();
+                    });
+
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                // 오늘 날짜를 가져와서 포맷팅
+                const today = new Date();
+                const formattedDate = today.toLocaleDateString('ko-KR', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                }).replace(/(\d{4})\. (\d{2})\. (\d{2})\./, '$1.$2.$3');  // 'YYYY.MM.DD' 형식으로 변환
+
+                // 문서의 타이틀 내 날짜 업데이트
+                document.querySelector('.title span').textContent = formattedDate;
+
+                // 기존 코드 로딩 처리
+                fetchQuiz();
+                const startButton = document.querySelector(".quiz__start .btn button");
+                startButton.addEventListener("click", function () {
+                    document.querySelector(".quiz__start").classList.add("none");
+                    document.querySelector(".quiz__play").classList.remove("none");
+                });
+            });
+
+
+            // document.addEventListener("DOMContentLoaded", () => {
+            //     fetchQuiz();
+            //     const startButton = document.querySelector(".quiz__start .btn button");
+            //     startButton.addEventListener("click", function () {
+            //         document.querySelector(".quiz__start").classList.add("none");
+            //         document.querySelector(".quiz__play").classList.remove("none");
+            //     });
+            // });
+
+            const presentQuiz = () => {
+                const currentQuiz = quizInfo[currentIndex];
+                console.log(currentQuiz);
+                let quizPlayTag = `
+                    <div class="quiz">
+                        <div class="quiz__header">${currentQuiz.date} ${currentQuiz.type}</div>
+                        <div class="quiz__main">
+                            <div class="question">${currentIndex + 1}. ${currentQuiz.question}</div>`;
+                // if (currentQuiz.desc != undefined) {
+                //     quizPlayTag += `<div class="View__problem">${currentIndex + 1}. ${currentQuiz.desc}</div>`
+                // }
+                // if (currentQuiz.desc == undefined) {
+                //     currentQuiz.desc = "";
+                // }
+                quizPlayTag += `
+                            <div class="answer">
+                                <input type="text" id="userAnswer" placeholder="정답을 입력하세요!">
+                            </div>
+                            <div class="answer2 none"> 정답: ${currentQuiz.answer}</div>
+                            <div class="desc none"> 설명: ${currentQuiz.desc}</div>
+                            <div class="confirm">
+                                <button class="check">확인하기</button>
+                                <button class="next none">다음문제</button>
+                            </div>
+                            <div class="score">
+                                맞은문제: ${correctCount}
+                                틀린문제: ${incorrectCount}
+                                남은문제: ${currentIndex}/${quizInfo.length}
+                        </div>
+                    </div>
+                    `;
+                quizPlay.innerHTML = quizPlayTag;
+                const quizConfirm = quizPlay.querySelector(".confirm");
+                const quizNext = quizPlay.querySelector(".next");
+                const quizCheck = quizPlay.querySelector(".check")
+                const quizAnswer = quizPlay.querySelector(".answer")
+                const quizInput = quizPlay.querySelector(".answer input")
+                const answerElement = quizPlay.querySelector(".answer2");
+                const descElement = quizPlay.querySelector(".desc");
+
+                quizCheck.addEventListener("click", () => {
+
+                    const quizElement = document.querySelector(".quiz")
+                    const userAnswer = quizInput.value;
+                    if (userAnswer == "") {
+                        alert("정답을 입력해주세요! 🥹")
+                        return;
+                    }
+                    const correctAnswer = quizInfo[currentIndex].answer
+                    if (userAnswer == correctAnswer) {
+                        quizElement.classList.add("good")
+                        correctCount++;
+                    } else {
+                        quizElement.classList.add("bad")
+                        incorrectCount++;
+                    }
+
+                    answerElement.classList.remove("none")
+                    descElement.classList.remove("none")
+                    quizNext.classList.remove("none")
+                    quizCheck.classList.add("none")
+
+
+                });
+
+                quizNext.addEventListener("click", function () {
+                    if (currentIndex < quizInfo.length - 1) {
+                        currentIndex++;
+                        presentQuiz();
+                    } else {
+                        alert("퀴즈가 종료되었습니다.")
+
+                        const totalScore = ((correctCount / quizInfo.length) * 100).toFixed(2); // 점수 계산
+                        alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수: ${correctCount}/${quizInfo.length}`);
+                    }
+
+                })
+
+            };
+
+
+
+
+        </script>
+</body>
+
+
+</html>

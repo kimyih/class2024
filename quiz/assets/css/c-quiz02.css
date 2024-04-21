@@ -1,0 +1,435 @@
+@font-face {
+    font-family: "bitbit";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/DNFBitBit.woff") format("woff2"),
+        url("../fonts/DNFBitBit.woff2") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'bitbit';
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* common */
+.none {
+    display: none !important;
+}
+
+#quiz__wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 10px solid #000000;
+    /* 아래 줄에는 이미지 파일의 URL을 넣어주세요. */
+    background-image: url("https://64.media.tumblr.com/09e5dc215ed9e09a0a96094e5255720e/7770f13ba34dd3f9-79/s2048x3072/b7f760427e717daf1c05def7a7b7853dd74f9ee5.gifv");
+    /* 위의 URL 부분에는 이미지 파일의 URL이 들어갑니다. */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: url(../img/cursor.png);
+}
+
+#quiz__wrap::before {
+    content: "";
+    border: 8px solid #FF8BC1;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+    z-index: -1;
+    /* background-color: #AEA8FF; */
+}
+
+/* quiz__start */
+.quiz__start {
+    width: 35vw;
+    height: 53vh;
+    border: 5px solid #fff;
+    background-color: #b683c16b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: -150px;
+}
+
+.quiz__start .title {
+    width: 100%;
+    border-bottom: 10px solid #fff;
+    padding: 10px;
+}
+
+.quiz__start .title span {
+    font-family: 'GmarketSans';
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.quiz__start .text ul {
+    margin-top: 10px;
+}
+
+.quiz__start .text li {
+    font-family: 'GmarketSans';
+    color: #fff;
+    line-height: 1.3;
+}
+
+.quiz__start .text span {
+    font-family: 'GmarketSans';
+    font-size: 20px;
+    color: #fff;
+}
+
+.quiz__start .text span i {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-size: 20px;
+    color: #FFEC51;
+}
+
+.quiz__start .text span strong {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-size: 20px;
+    color: #fff;
+}
+
+.quiz__start .text h1 {
+    font-size: 5vmax;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.quiz__start .btn {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.quiz__start .btn button {
+    padding: 10px 30px;
+    font-size: 25px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #b683c1;
+    color: #fff;
+    border: 5px solid #fff;
+    cursor: pointer;
+}
+
+.quiz__start .btn button:hover {
+    background-color: #FFFFFF;
+    color: #b683c1;
+    border: 5px solid #b683c1;
+}
+
+/* quiz__bg
+.quiz__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+}
+.quiz__bg #canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #2C1366;
+} */
+/* quiz__play */
+.quiz__play {
+    width: 35vw;
+    min-height: 53vh;
+    border: 10px solid #fff;
+    background-color: #b683c1;
+    border-radius: 10px;
+    position: relative;
+    padding: 24px;
+    /* display: none; */
+    z-index: 100;
+    margin-top: -150px;
+    border-radius: 20px;
+}
+
+.quiz__play::before {
+    content: 'Questoin';
+    position: absolute;
+    left: -175px;
+    top: 110px;
+    font-family: 'bitbit';
+    color: #FFEC51;
+    font-size: 60px;
+    text-shadow: 5px 5px 0px #fff;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+.quiz__play::after {
+    content: 'Why';
+    position: absolute;
+    right: -102px;
+    bottom: 50px;
+    font-family: 'bitbit';
+    color: #40DDAE;
+    font-size: 60px;
+    text-shadow: 5px 5px 0px #fff;
+    transform: rotate(90deg);
+    text-transform: uppercase;
+}
+
+.quiz__header {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* .quiz__play .number {
+    position: absolute;
+    right: -10px;
+    top: -68px;
+    height: 64px;
+    background-color: #FF8BC1;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 10px 30px;
+    border: 10px solid #fff;
+    z-index: 101;
+} */
+.quiz__play .question {
+    font-family: 'GmarketSans';
+    color: #fff;
+    line-height: 1.3;
+    font-size: 24px;
+}
+
+.quiz__play .question::before {
+    content: 'Q.';
+    font-size: 40px;
+    color: #FFEC51;
+    font-weight: bold;
+}
+
+.quiz__play .View__problem {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 0;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.quiz__play .answer {
+    margin-top: 20px;
+}
+
+.quiz__play .answer input {
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    border: 0;
+    text-align: center;
+    font-size: 40px;
+    border: 5px solid #00000099;
+}
+
+.quiz__play .answer input::placeholder {
+    color: #5c5c5c;
+    ;
+}
+
+.quiz__play .answer .confirm {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.quiz__play .confirm {
+    display: flex;
+    /* 버튼을 수평으로 가운데로 정렬 */
+    justify-content: center;
+}
+
+.quiz__play .confirm button {
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: 'GmarketSans';
+    border-radius: 50px;
+    border: 0;
+    background-color: #733b7f;
+    color: #fff;
+    border: 5px solid #fff;
+    cursor: pointer;
+    margin: 15px 5px 0;
+}
+
+.quiz__play .confirm button:hover {
+    background-color: #8b5e95;
+}
+
+.quiz__play .answer2 {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    text-align: left;
+    background-color: #00000032;
+    margin-top: 10px;
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+    font-family: 'GmarketSans';
+}
+
+.quiz__play .desc {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 20px;
+    text-align: left;
+    background-color: #00000032;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'GmarketSans';
+}
+
+.quiz__play .score {
+    min-height: 66px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 20px 30px;
+    z-index: 101;
+}
+
+.quiz__play .score::before {
+    width: 20px;
+    height: 20px;
+}
+
+/* good, bad */
+.quiz__play .good {
+    position: relative;
+}
+
+.quiz__play .good::before {
+    content: '';
+    width: 130px;
+    height: 130px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    z-index: 100;
+}
+
+.quiz__play .bad {
+    position: relative;
+}
+
+.quiz__play .bad::before {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 100;
+}
+
+.quiz__play .bad::after {
+    content: '';
+    width: 150px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 800px) {
+    .quiz__start {
+        width: 100%;
+        height: 100vh;
+    }
+}
