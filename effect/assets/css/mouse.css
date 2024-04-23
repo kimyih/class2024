@@ -55,15 +55,17 @@ li {
 .header__inner h1 em {
     font-weight: 800;
     font-style: normal;
+    font-size: 18px;
+    color: #d2d2d2;
 }
 
 #footer {
     width: 100%;
     /* background-color: rgba(255, 255, 255, 0.3); */
+    position: relative;
+    z-index: 20000;
 
 }
-
-.footer__inner {}
 
 .footer__inner ul {
     display: flex;
@@ -81,6 +83,7 @@ li {
     display: inline-block;
     font-family: "Montserrat";
     line-height: 1;
+    background-color: #272727;
 }
 
 .footer__inner ul li a:hover {
@@ -91,4 +94,22 @@ li {
 .footer__inner ul li.active a {
     background-color: #ffffff;
     color: #000000;
+}
+
+.footer__inner .link {
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+}
+
+.footer__inner .link a {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-right: 25px;
+    background-image: url(../svg/arrow_2.svg);
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-color: #272727;
 }

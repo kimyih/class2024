@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="assets/css/parallax.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dosis:wght@200..800&display=swap"
+        <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+    <rel="stylesheet">
+        <style>
+            .main__inner section {
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .main__inner section:nth-child(even) {
+                background-color: #00000016;
+            }
+
+            .main__inner section .num {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                color: #111;
+                font-family: 'Poppins';
+                font-size: 40px;
+                font-weight: 200;
+            }
+
+            .main__inner section .img {
+                width: 200px;
+                height: 200px;
+                background-image: url(assets/img/img01.jpg);
+                background-size: cover;
+                filter: grayscale();
+            }
+
+            .main__inner section .img.active {
+                background-image: url(assets/img/img02.jpg);
+            }
+
+            #section5 {
+                flex-direction: column;
+            }
+
+            #section5 .text,
+            #section6 .text {
+                font-family: 'Poppins';
+                text-transform: uppercase;
+                font-size: 5vw;
+                font-weight: 800;
+                line-height: 1;
+                color: #fff;
+            }
+
+            #section7 .text {
+                font-family: 'NexonLv1Gothic';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 30px;
+                width: 100%;
+                text-align: center;
+                font-size: 5vw;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                background-color: #BFCABD;
+            }
+
+            #section8 {
+                flex-direction: column;
+            }
+
+            #section8 .text {
+                font-size: 2vw;
+                line-height: 1.5;
+                text-transform: uppercase;
+            }
+
+            #section8 .img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        </style>
+</head>
+
+<body class="bg2">
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1><a href="index.html">Parallax Effect 02</a></h1>
+                <p>GSAP scrollTrigger - Pin 애니메이션 </p>
+                <div class="link">
+                    <ul>
+                        <li><a href="mouse01.html">Mouse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__inner">
+                <section id="section1">
+                    <span class="num">01</span>
+                    <div class="img"></div>
+                </section>
+                <!-- section01 -->
+                <section id="section2">
+                    <span class="num">02</span>
+                    <div class="img i1"></div>
+                    <div class="img i2"></div>
+                    <div class="img i3"></div>
+                    <div class="img i4"></div>
+                </section>
+                <!-- section02 -->
+                <section id="section3">
+                    <span class="num">03</span>
+                    <div class="img i1"></div>
+                    <div class="img i2"></div>
+                    <div class="img i3"></div>
+                    <div class="img i4"></div>
+                    <div class="img i5"></div>
+                    <div class="img i6"></div>
+                    <div class="img i7"></div>
+                </section>
+                <!-- section03 -->
+
+                <section id="section4">
+                    <span class="num">04</span>
+                    <div class="img"></div>
+                </section>
+                <!-- section04 -->
+
+                <section id="section5">
+                    <span class="num">05</span>
+                    <div class="text t1">section5</div>
+                    <div class="text t2">section5</div>
+                    <div class="text t3">section5</div>
+                    <div class="text t4">section5</div>
+                </section>
+                <!-- section05 -->
+
+                <section id="section6">
+                    <span class="num">06</span>
+                    <div class="text">section6</div>
+                </section>
+                <!-- section06 -->
+
+                <section id="section7">
+                    <span class="num">07</span>
+                    <div class="text t1">코딩이란?</div>
+                    <div class="text t2">프로그래밍 코드를</div>
+                    <div class="text t3">어딘가에</div>
+                    <div class="text t4">적는 것을 말한다.</div>
+                    <div class="text t5">코딩은</div>
+                    <div class="text t6">누구나</div>
+                    <div class="text t7">할 수 있다.</div>
+                </section>
+                <!-- section07 -->
+
+                <section id="section8">
+                    <span class="num">08</span>
+                    <div class="text t1">section8</div>
+                    <div class="text t2">section8</div>
+                    <div class="text t3">section8</div>
+                    <div class="img"></div>
+                </section>
+                <!-- section08 -->
+
+                <section id="section9">
+                    <span class="num">09</span>
+                    <div class="img"></div>
+                </section>
+                <!-- section09 -->
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <ul>
+                        <li><a href="parallax01.html">01</a></li>
+                        <li class="active"><a href="parallax02.html">02</a></li>
+                        <li><a href="parallax03.html">03</a></li>
+                        <li><a href="parallax04.html">04</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
+    <script>
+        // 01 : 이미지 애니메이션 주기
+        const ani1 = gsap.timeline();
+        ani1.to("#section1 .img", {
+            scale: 0,
+            borderRadius: 200,
+            rotation: 720
+        }).to("#section1 .img", {
+            scale: 1,
+            borderRadius: 20,
+            rotation: 0
+        })
+        ScrollTrigger.create({
+            animation: ani1,
+            trigger: "#section1",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+        //02
+        const ani2 = gsap.timeline();
+        ani2.from("#section2 .i1", {
+            y: -100,
+            autoAlpha: 0,
+            borderRadius: 200,
+        }, "a").from("#section2 .i2", {
+            y: 100,
+            autoAlpha: 0,
+            borderRadius: 200,
+        }, "b").from("#section2 .i3", {
+            y: -100,
+            autoAlpha: 0,
+            borderRadius: 200,
+        }, "a").from("#section2 .i4", {
+            y: 100,
+            autoAlpha: 0,
+            borderRadius: 200,
+        }, "b")
+        ScrollTrigger.create({
+            animation: ani2,
+            trigger: "#section2",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+        //03
+        const ani3 = gsap.timeline();
+        ani3.from("#section3 .img", {
+            y: -100,
+            autoAlpha: 0,
+            scale: 10,
+            borderRadius: 200,
+            ease: "power4.out",
+            // stagger: 0.1
+            stagger: {
+                amount: 3,
+                from: "random"
+            }
+        })
+        ScrollTrigger.create({
+            animation: ani3,
+            trigger: "#section3",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+        //04 이미지 축소
+        const ani4 = gsap.timeline();
+        ani4.from("#section4 .img", {
+            autoAlpha: 0,
+            scale: 5,
+            width: "100vw",
+            height: "100vh",
+        })
+        ScrollTrigger.create({
+            animation: ani4,
+            trigger: "#section4",
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+        //05 텍스트 애니메이션
+        const ani5 = gsap.timeline();
+        ani5.to("#section5 .t1", { xPercent: 300 }, "text")
+            .to("#section5 .t2", { xPercent: -300 }, "text")
+            .to("#section5 .t3", { xPercent: 300 }, "text")
+            .to("#section5 .t4", { xPercent: -300 }, "text")
+
+        ScrollTrigger.create({
+            animation: ani5,
+            trigger: "#section6",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+
+
+        // 06 : 텍스트 확대하기
+        const ani6 = gsap.timeline();
+        ani6.to("#section6 .text", { scale: 60, duration: 2 })
+            .to("#section6 .text", { rotation: 100, autoAlpha: 0 })
+
+
+        ScrollTrigger.create({
+            animation: ani6,
+            trigger: "#section6",
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+
+        // 07: 텍스트 제자리 애니메이션
+        const ani7 = gsap.timeline();
+        ani7.from("#section7 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t2", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t3", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t4", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t5", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t6", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section7 .t7", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+
+        ScrollTrigger.create({
+            animation: ani7,
+            trigger: "#section7",
+            start: "top top",
+            end: "+=6000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+
+        // 08: 텍스트 애니메이션
+        const ani8 = gsap.timeline();
+
+        ani8.from("#section8 .t1", { x: innerWidth * 1 })
+        ani8.from("#section8 .t2", { x: innerWidth * -1 })
+        ani8.from("#section8 .t3", { x: innerWidth * 1 })
+        ani8.from("#section8 .img", { x: innerWidth * -1, rotation: 360, scale: 5.5 })
+
+        ScrollTrigger.create({
+            animation: ani8,
+            trigger: "#section8",
+            start: "top top",
+            end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+    </script>
+</body>
+
+</html>
