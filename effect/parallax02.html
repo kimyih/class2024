@@ -92,6 +92,26 @@
                 height: 100px;
                 border-radius: 50%;
             }
+
+            #section9 .text {
+                font-family: 'NexonLv1Gothic';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 30px;
+                width: 100%;
+                text-align: center;
+                font-size: 5vw;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                background-color: #BFCABD;
+            }
+
+            #section9 .img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
         </style>
 </head>
 
@@ -182,6 +202,7 @@
                 <section id="section9">
                     <span class="num">09</span>
                     <div class="img"></div>
+                    <div class="text t1">짜잔</div>
                 </section>
                 <!-- section09 -->
             </div>
@@ -370,6 +391,27 @@
             trigger: "#section8",
             start: "top top",
             end: "+=4000",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        })
+
+        // 09 : 글씨 나온 후 이미지 나타나기
+        const ani9 = gsap.timeline();
+
+        ani9.from("#section9 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
+            .from("#section9 .img", {
+                y: -100,
+                autoAlpha: 0,
+                borderRadius: 200,
+            }, "a")
+
+        ScrollTrigger.create({
+            animation: ani9,
+            trigger: "#section9",
+            start: "top top",
+            end: "+=7000",
             scrub: true,
             pin: true,
             anticipatePin: 1,
