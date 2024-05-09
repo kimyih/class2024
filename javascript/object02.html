@@ -49,56 +49,348 @@
                 <li><a href="#">07. array.prototype.find()💛 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환합니다</a></li>
                 <li><a href="#">08. array.prototype.findIndex() 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 인덱스로 반환합니다</a></li>
                 <li><a href="#">09. array.prototype.findLast() 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순으로 반환합니다</a></li>
-                <li><a href="#"></a>10. array.prototype.findLastIndex() 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순 인덱스로 반환합니다
-                <li><a href="#"></a>11. array.prototype.flat() 메서드는 중첩된 배열을 하나의 배열로 반환합니다.</a></li>
-                <li><a href="#"></a>12. array.prototype.flatMap() 메서드는 먼저 매핑함수를 사용해 각 엘리먼트에 대해 map 수행 후, 결과를 새로운 배열로
-                    평탄화합니다.
-                <li><a href="#"></a>13. array.prototype.forEach()💛💛💛 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.
-                <li><a href="#"></a>14. array.prototype.filter() 메서드는 주어진 함수 조건에 맞는 모든 요소를 새로운 배열로 반환합니다.
-                <li><a href="#"></a>15. array.prototype.every() 메서드는 주어진 함수를 모두 통과하는지 확인하고, 불린(true, false)로 반환합니다.
-                <li><a href="#"></a>16. array.prototype.map()💛💛💛 메서드는 주어진 함수를 호출하고, 그 결과를 모아서 만든 새로운 배열을 반환합니다.
-                <li><a href="#"></a>17. array.prototype.some() 메서드는 주어진 판별 함수를 통과하는지 테스트하여, 그 그결과를 불린(true, false)로
-                    반환합니다.
-                <li><a href="#"></a>18. array.prototype.includes() 메서드는 배열 포함 여부를 검색하여, 불린(true, false)을 반환합니다.
-                <li><a href="#"></a>19. array.prototype.indexOf()💛 메서드는 배열을 검색하고, 위치값(숫자)을 반환합니다.
-                <li><a href="#"></a>20. array.prototype.lastIndexOf() 메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다.
-                <li><a href="#"></a>21. array.prototype.join()💛 메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.
-                <li><a href="#"></a>22. array.prototype.pop() 메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.
-                <li><a href="#"></a>23. array.prototype.push()💛 메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다.
-                <li><a href="#"></a>24. array.prototype.reduce() 메서드는 배열의 각 요소를 실행하고, 하나의 결과값을 반환합니다.
-                <li><a href="#"></a>25. array.prototype.reduceRight() 메서드는 배열의 각 요소를 마지막부터 실행하고, 하나의 결과값을 반환합니다.
-                <li><a href="#"></a>26. array.prototype.reverse() 메서드는 배열 요소의 순서를 반대로 하고, 반대로 된 배열을 반환합니다.
-                <li><a href="#"></a>27. array.prototype.shift() 메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.
-                <li><a href="#"></a>28. array.prototype.unshift() 메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.
-                <li><a href="#"></a>29. array.prototype.slice()💛 메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.
-                <li><a href="#"></a>30. array.prototype.splice()💛 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
-                <li><a href="#"></a>31. array.prototype.sort()💛 메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다
-                <li><a href="#"></a>32. array.prototype.toLocaleString() 메서드는 배열의 요소를 문자열로 반환합니다.
-                <li><a href="#"></a>33. array.prototype.toString() 메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.
-                <li><a href="#"></a>34. array.prototype.values() 메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.
+                <li><a href="#">10. array.prototype.findLastIndex() 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순 인덱스로 반환합니다</a>
+                </li>
+                <li><a href="#">11. array.prototype.flat() 메서드는 중첩된 배열을 하나의 배열로 반환합니다.</a></li>
+                <li><a href="#">12. array.prototype.flatMap() 메서드는 먼저 매핑함수를 사용해 각 엘리먼트에 대해 map 수행 후, 결과를 새로운 배열로
+                        평탄화합니다.</a></li>
+                <li><a href="#">13. array.prototype.forEach()💛💛💛 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</a>
+                </li>
+                <li><a href="#">14. array.prototype.filter() 메서드는 주어진 함수 조건에 맞는 모든 요소를 새로운 배열로 반환합니다.</a></li>
+                <li><a href="#">15. array.prototype.every() 메서드는 주어진 함수를 모두 통과하는지 확인하고, 불린(true, false)로 반환합니다. </a>
+                </li>
+                <li><a href="#">16. array.prototype.map()💛💛💛 메서드는 주어진 함수를 호출하고, 그 결과를 모아서 만든 새로운 배열을 반환합니다.</a></li>
+                <li><a href="#">17. array.prototype.some() 메서드는 주어진 판별 함수를 통과하는지 테스트하여, 그 그결과를 불린(true, false)로
+                        반환합니다.</a></li>
+                <li><a href="#">18. array.prototype.includes() 메서드는 배열 포함 여부를 검색하여, 불린(true, false)을 반환합니다. </a></li>
+                <li><a href="#">19. array.prototype.indexOf()💛 메서드는 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
+                <li><a href="#">20. array.prototype.lastIndexOf() 메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다. </a></li>
+                <li><a href="#">21. array.prototype.join()💛 메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.</a></li>
+                <li><a href="#">22. array.prototype.pop() 메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다. </a></li>
+                <li><a href="#">23. array.prototype.push()💛 메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다. </a></li>
+                <li><a href="#">24. array.prototype.reduce() 메서드는 배열의 각 요소를 실행하고, 하나의 결과값을 반환합니다. </a></li>
+                <li><a href="#">25. array.prototype.reduceRight() 메서드는 배열의 각 요소를 마지막부터 실행하고, 하나의 결과값을 반환합니다. </a></li>
+                <li><a href="#">26. array.prototype.reverse() 메서드는 배열 요소의 순서를 반대로 하고, 반대로 된 배열을 반환합니다.</a></li>
+                <li><a href="#">27. array.prototype.shift() 메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다. </a></li>
+                <li><a href="#">28. array.prototype.unshift() 메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다. </a></li>
+                <li><a href="#">29.
+                        💛 메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다. </a></li>
+                <li><a href="#">30. array.prototype.splice()💛 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
+                    </a></li>
+                <li><a href="#">31. array.prototype.sort()💛 메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다</a></li>
+                <li><a href="#">32. array.prototype.toLocaleString() 메서드는 배열의 요소를 문자열로 반환합니다. </a></li>
+                <li><a href="#">33. array.prototype.toString() 메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다. </a></li>
+                <li><a href="#">34. array.prototype.values() 메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다. </a></li>
             </ul>
         </div>
         <!-- //main__menu -->
 
         <div class="main__sample container">
             <div id="sample01" class="sample">
-                <h3>01.if문</h3><br>
+                <h3>01. .find</h3><br>
                 <p>
-
+                <ul>
+                    <li>'Array.prototype.find()' 메서드는 주어진 조건을 만족하는 배열의 첫 번째 요소를 찾아 반환하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>find() 메서드는 배열에서 주어진 조건을 만족하는 첫 번째 요소를 찾아 반환하는데 사용됩니다. <Br>
+                        만약 조건을 만족하는 요소가 없을 경우 undefined를 반환합니다.</li>
+                </ul>
                 </p>
-                <pre><code>{
-   
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3, 4, 5];
+
+    const found = numbers.find(function(element) {
+        return element > 3;
+    });
+    
+    console.log(found); // 4                                                                                                                                                                                                   
 }</code></pre>
+                <p>
+                    위의 예제에서는 [1, 2, 3, 4, 5]라는 배열에서 조건을 만족하는 첫 번째 요소를 찾고 있습니다. 조건은 각 요소가 3보다 큰지를 확인하는 것입니다. <br>
+                    따라서 find() 메서드는 4라는 값을 반환합니다 <br><br>
+
+                    find() 메서드는 주어진 조건 함수를 사용하여 배열의 각 요소를 순회하며, 조건 함수가 true를 반환하는 첫 번째 요소를 찾습니다. <br>
+                    찾은 요소를 반환하고, 만약 조건을 만족하는 요소가 없을 경우 undefined를 반환합니다.<br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const people = [
+    { name: 'Alice', age: 30 },
+    { name: 'Bob', age: 25 },
+    { name: 'Charlie', age: 35 }
+    ];
+    
+    const foundPerson = people.find(function(person) {
+    return person.age === 25;
+    });
+    
+    console.log(foundPerson); // { name: 'Bob', age: 25 }                                                                                                                                                                    
+}</code></pre>
+                <p>
+                    위의 예제에서는 객체로 이루어진 배열에서 age가 25인 첫 번째 사람을 찾고 있습니다. <br>
+                    따라서 find() 메서드는 { name: 'Bob', age: 25 }라는 객체를
+                    반환합니다. <br><br>
+                </p>
                 <div class="result">
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-
+                            4 <br>
+                            { name: 'Bob', age: 25 } <br><br>
                         </div>
                     </details>
                 </div>
             </div>
             <!-- //sample01 -->
+
+            <div id="sample02" class="sample">
+                <h3>02. .forEach</h3><br>
+                <p>
+                <ul>
+                    <li>'Array.prototype.find()' 메서드는 주어진 조건을 만족하는 배열의 첫 번째 요소를 찾아 반환하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>forEach() 메서드는 주로 배열의 모든 요소에 대해 특정 작업을 수행할 때 사용됩니다. 예를 들어, 배열의 요소를 화면에 출력하거나, 배열의 요소를 가지고 연산을
+                        수행하는 등의 작업에 활용될 수 있습니다.</li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3, 4, 5];
+
+    numbers.forEach(function(element) {
+        console.log(element);
+    });                                                                                                                                                                                                                                 
+}</code></pre>
+                <p>
+                    위의 예제에서는 [1, 2, 3, 4, 5]라는 배열의 각 요소에 대해 주어진 함수를 실행하고 있습니다. 각 요소는 순차적으로 함수의 매개변수로 전달되어 console.log()를
+                    통해 출력됩니다. <br>
+                    forEach() 메서드는 배열을 순회하면서 각 요소에 대해 주어진 함수를 실행합니다. 이 때, 배열의 원본은 변경되지 않습니다. <br><br>
+
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    fruits.forEach(function(fruit, index, array) {
+        console.log(`Index ${index}: ${fruit}`);
+    });
+    
+    // 출력 결과:
+    // Index 0: apple
+    // Index 1: banana
+    // Index 2: cherry                                                                                                                                                                                      
+}</code></pre>
+                <p>
+                    1. currentValue: 배열에서 현재 순회 중인 요소의 값 <br>
+                    2. index (선택적): 현재 순회 중인 요소의 인덱스 <br>
+                    3. array (선택적): 원본 배열 <br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            2 <br>
+                            3 <br>
+                            4 <br>
+                            5 <br>
+                            Index 0: apple <br>
+                            Index 1: banana <br>
+                            Index 2: cherry <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample02 -->
+
+            <div id="sample03" class="sample">
+                <h3>03. .map</h3><br>
+                <p>
+                <ul>
+                    <li>'Array.prototype.map()' 메서드는 배열의 각 요소에 대해 주어진 함수를 호출하여 새로운 배열을 생성하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>map() 메서드는 원본 배열을 변경하지 않고, 각 요소에 대해 주어진 함수를 호출하여 새로운 배열을 반환합니다.</li>
+                    <li>map() 메서드는 배열의 모든 요소에 대해 어떤 작업을 수행하고 그 결과를 새로운 배열로 만들 때 사용됩니다. <br>
+                        예를 들어, 배열의 요소를 변형하거나 각 요소에 대해 특정 연산을 수행하여 새로운 배열을 만들 때 유용하게 사용됩니다.</li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3, 4, 5];
+
+    const doubledNumbers = numbers.map(function(element) {
+        return element * 2;
+    });
+    
+    console.log(doubledNumbers); // [2, 4, 6, 8, 10]                                                                                                                                                                                                                                        
+}</code></pre>
+                <p>
+                    위의 예제에서는 [1, 2, 3, 4, 5]라는 배열의 각 요소에 대해 주어진 함수를 호출하여 새로운 배열을 생성하고 있습니다. <br>
+                    각 요소는 순차적으로 함수의 매개변수로 전달되며, 해당 요소를 2배로 만든 값으로 새로운 배열을 만들었습니다.<br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    const capitalizedFruits = fruits.map(function(fruit, index, array) {
+        return fruit.toUpperCase();
+    });
+    
+    console.log(capitalizedFruits); // ["APPLE", "BANANA", "CHERRY"]                                                                                                                                                                                                    
+}</code></pre>
+                <p>
+                    위의 예제에서는 각 과일의 첫 글자를 대문자로 만든 새로운 배열을 생성하고 있습니다. <Br>
+                    1. currentValue: 배열에서 현재 순회 중인 요소의 값 <br>
+                    2. index (선택적): 현재 순회 중인 요소의 인덱스 <br>
+                    3. array (선택적): 원본 배열 <br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            [2, 4, 6, 8, 10] <br>
+                            ["APPLE", "BANANA", "CHERRY"] <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample03 -->
+
+            <div id="sample04" class="sample">
+                <h3>04. .indexOf</h3><br>
+                <p>
+                <ul>
+                    <li>'Array.prototype.indexOf()' 메서드는 배열에서 지정된 요소를 찾아 그 인덱스를 반환하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>indexOf() 메서드는 배열에서 요소를 검색하여 인덱스를 반환하는데 사용되며, 배열에 해당 요소가 있는지 여부를 확인하거나 특정 요소의 위치를 파악할 때 유용하게
+                        사용됩니다.</li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    const index = fruits.indexOf('banana');
+    console.log(index); // 1                                                                                                                                                                                                                                                            
+}</code></pre>
+                <p>
+                    위의 예제에서는 fruits 배열에서 'banana'라는 요소를 찾고 있습니다. <br>
+                    'banana'의 인덱스는 1이므로, indexOf() 메서드는 1을 반환합니다. <br><Br>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    const index = fruits.indexOf('grape');
+    console.log(index); // -1                                                                                                                                                                                                                       
+}</code></pre>
+                <p>
+                    indexOf() 메서드는 찾으려는 요소가 배열에서 첫 번째로 발견되는 위치의 인덱스를 반환합니다. <br>
+                    만약 배열 안에 해당 요소가 없으면 -1을 반환합니다. <br>
+                    위의 예제에서는 fruits 배열에서 'grape'라는 요소를 찾고 있습니다. <br>
+                    하지만 'grape'는 배열에 없으므로 indexOf() 메서드는 -1을 반환합니다. <br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry', 'banana'];
+
+    const index = fruits.indexOf('banana', 2);
+    console.log(index); // 3                                                                                                                                                                                                                                    
+}</code></pre>
+                <p>
+                    indexOf() 메서드는 두 번째 매개변수로 검색을 시작할 인덱스를 지정할 수 있습니다. 이렇게 하면 해당 인덱스부터 배열의 끝까지만을 검색하게 됩니다.<br>
+                    위의 예제에서는 fruits 배열에서 인덱스 2부터 시작하여 'banana'라는 요소를 찾고 있습니다. <br>
+                    이 때, 두 번째 'banana'의 인덱스는 3이므로 indexOf() 메서드는 3을 반환합니다.<br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1 <br>
+                            -1 <br>
+                            3 <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <div id="sample05" class="sample">
+                <h3>05. .join</h3><br>
+                <p>
+                <ul>
+                    <li>
+                        Array.prototype.join() 메소드는 JavaScript에서 배열의 모든 요소를 문자열로 변환하고, 이를 연결하여 하나의 문자열로 합치는 기능을 합니다.
+                    </li>
+                    <li>이때, 각 요소 사이에 넣을 수 있는 구분자를 지정할 수 있습니다. 만약 구분자를 지정하지 않으면, 기본값으로 쉼표(,)가 사용됩니다.</li>
+                    <li>join() 메서드는 배열의 모든 요소를 하나의 문자열로 결합할 때 사용됩니다. 주로 배열을 문자열로 변환하여 출력할 때나, CSV 파일을 생성할 때 유용하게 사용됩니다.
+                    </li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana', 'cherry'];
+
+    const joinedString = fruits.join(', ');
+    console.log(joinedString); // "apple, banana, cherry"                                                                                                                                                                                                                                                              
+}</code></pre>
+                <p>
+                    위의 예제에서는 fruits 배열의 모든 요소를 쉼표와 공백으로 구분하여 하나의 문자열로 결합하고 있습니다. <br>
+                    따라서 join() 메서드는 "apple, banana, cherry"라는 문자열을 반환합니다. <br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3, 4, 5];
+
+    const joinedString = numbers.join();
+    console.log(joinedString); // "1,2,3,4,5"
+}</code></pre>
+                <p>
+                    join() 메서드는 배열의 각 요소를 문자열로 변환한 후, 지정된 구분자(separator)로 연결하여 하나의 문자열로 만듭니다. <br>
+                    구분자를 생략하면 기본값으로 쉼표(',')가 사용됩니다. <br>
+                    위의 예제에서는 numbers 배열의 모든 요소를 기본 구분자인 쉼표(',')로 연결하여 하나의 문자열로 만들고 있습니다. <br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            "apple, banana, cherry"<br>
+                            "1,2,3,4,5" <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample05 -->
+
+            <div id="sample06" class="sample">
+                <h3>06. .push</h3><br>
+                <p>
+                <ul>
+                    <li>'Array.prototype.push()' 메서드는 배열의 끝에 하나 이상의 요소를 추가하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>push() 메서드는 배열의 끝에 요소를 추가할 때 사용되며, 한 번에 여러 요소를 추가할 수도 있습니다. <br>
+                        이 메서드를 사용하여 배열에 요소를 추가하면 배열의 원본이 변경됩니다.</li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana'];
+
+    fruits.push('cherry');
+    console.log(fruits); // ["apple", "banana", "cherry"]
+}</code></pre>
+                <p>
+                    위의 예제에서는 fruits 배열의 끝에 'cherry'라는 요소를 추가하고 있습니다. <br>
+                    따라서 push() 메서드를 호출한 후에는 fruits 배열이 ["apple", "banana", "cherry"]로 업데이트됩니다. <br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3];
+
+    const newLength = numbers.push(4, 5);
+    console.log(numbers); // [1, 2, 3, 4, 5]
+    console.log(newLength); // 5                    
+}</code></pre>
+                <p>
+                    push() 메서드는 배열에 하나 이상의 요소를 추가하고, 배열의 길이를 반환합니다. 추가된 요소의 인덱스는 배열의 길이와 동일합니다.<br>
+                    위의 예제에서는 numbers 배열에 4와 5라는 요소를 추가하고 있습니다. <br>
+                    push() 메서드는 배열의 길이를 반환하므로, newLength 변수에는 배열의 새로운 길이인 5가 저장됩니다.<br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["apple", "banana", "cherry"]<br>
+                            [1, 2, 3, 4, 5]<br>
+                            5 <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample06 -->
 
 
     </main>

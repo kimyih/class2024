@@ -282,52 +282,39 @@
         <!-- //footer -->
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        // $(function () {
-        //     let currentIndex = 0; // 현재 이미지
-
-        //     setInterval(() => {
-        //         let nextIndex = (currentIndex + 1) % 3 // 1, 2, 0 ,, 1, 2, 0,, 무한반복
-
-        //         $(".slider").eq(currentIndex).fadeOut(1000);   // 첫번째 이미지가 사라짐
-        //         $(".slider").eq(nextIndex).fadeIn(1000);   // 두번째 이미지가 나타남
-
-        //         currentIndex = nextIndex;
-        //     }, 1000);
-        // });
-    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(function () {
-            let currentIndex = 0;
+            let currentIndex = 0; // 현재 이미지
 
             setInterval(() => {
-                let nextIndex = (currentIndex + 1) % 3;
+                let nextIndex = (currentIndex + 1) % 3 // 1, 2, 0 ,, 1, 2, 0,, 무한반복
 
-                $(".slider").eq(currentIndex).fadeIn(1000);
-                $(".slider").eq(nextIndex).fadeOut(1000);
+                $(".slider").eq(currentIndex).fadeOut(1000);   // 첫번째 이미지가 사라짐
+                $(".slider").eq(nextIndex).fadeIn(1000);   // 두번째 이미지가 나타남
+
+                currentIndex = nextIndex;
+            }, 1000);
+        });
+    </script> -->
+
+    <script>
+        window.onload = function () {
+            let currentIndex = 0; // 현재 이미지
+            const slider = document.querySelectorAll(".slider");    // 모든 이미지 변수 저장
+            slider.forEach(img => img.style.opacity = "0");         // 모든 이미지를 투명하게
+            slider[0].style.opacity = "1";                          // 첫번째 이미지만 보이게 설정
+
+            setInterval(() => {     // 3초에 한번씩 실행
+                let nextIndex = (currentIndex + 1) % slider.length      //  1 2 0 1 2 0.......
+
+                slider[currentIndex].style.opacity = "0";      // 첫번째 이미지 사라짐
+                slider[nextIndex].style.opacity = "1";      // 두번째 이미지 나타남
+                slider.forEach(img => img.style.transition = "all 1s")  // 이미지에 애니메이션 추가
 
                 currentIndex = nextIndex;
             }, 3000);
-        });
-    </script>
-    <script>
-        // window.onload = function () {
-        //     let currentIndex = 0; // 현재 이미지
-        //     const slider = document.querySelectorAll(".slider");    // 모든 이미지 변수 저장
-        //     slider.forEach(img => img.style.opacity = "0");         // 모든 이미지를 투명하게
-        //     slider[0].style.opacity = "1";                          // 첫번째 이미지만 보이게 설정
-
-        //     setInterval(() => {     // 3초에 한번씩 실행
-        //         let nextIndex = (currentIndex + 1) % slider.length      //  1 2 0 1 2 0.......
-
-        //         slider[currentIndex].style.opacity = "0";      // 첫번째 이미지 사라짐
-        //         slider[nextIndex].style.opacity = "1";      // 두번째 이미지 나타남
-        //         slider.forEach(img => img.style.transition = "all 1s")  // 이미지에 애니메이션 추가
-
-        //         currentIndex = nextIndex;
-        //     }, 3000);
-        // }
+        }
     </script>
 
     <script>
@@ -341,19 +328,6 @@
         //         $("#header").removeClass("on");
         //     });
         // });
-    </script>
-
-    <script>
-        $(function () {
-            $(".nav>ul>li").mouseover(function () {
-                $(".nav>ul>li>ul").stop().fadeIn(900);
-                $("#header").addClass("on");
-            });
-            $(".nav>ul>li").mouseout(function () {
-                $(".nav>ul>li>ul").stop().fadeOut(100);
-                $("#header").removeClass("on");
-            });
-        })
     </script>
 </body>
 

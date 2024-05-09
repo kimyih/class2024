@@ -1,0 +1,114 @@
+placeholder="로그인을 하여 코드 링크를 저장하세요!"
+autocomplete="off" class="codelink-input-style">
+<div class="btn">저장</div>
+</div>
+</div>
+</fieldset>
+<div class="login btn">
+    <a href="#">로그인</a>
+</div>
+</div>
+</div>
+</header>
+<!-- //header -->
+<main id="main">
+    <div class="container">
+        <div class="main-Intro">
+            <section class="section01">
+                <div class="content">
+                    <h3>
+                        Code <br>
+                        smarter <br>
+                        faster <br>
+                    </h3>
+                    <div class="section01__img01"></div>
+                    <div class="section01__img02"></div>
+                    <div class="section01__img03"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer id="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="left">
+                <span>문의 : </span><a href="#" class="maill">kjw040416@gmail.com</a>
+            </div>
+            <p>Copyright © WEBS Corp. All Rights Reserved.</p>
+            <div class="right">
+                <ul>
+                    <li><a href="#">김진우</a></li>
+                    <li><a href="#">김이현</a></li>
+                    <li><a href="#">최선화</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+<div class="sign">
+    <a href="#" class="popup_close">X</a>
+    <div class="sign__title">
+        <img src="assets/img/974e19416242ccb6755ce5e4878d4988.jpg" alt="#">
+        <div>
+            <h2>WELCOME</h2>
+            <p>
+                "마이 페이지에 원하는 링크를 붙여넣으세요"
+            </p>
+        </div>
+    </div>
+    <!-- //sign__title -->
+
+    <div class="sign__form">
+        <form action="#" name="#" method="post">
+            <fieldset>
+                <legend class="blind">로그인 영역</legend>
+                <div class="member__signin">
+                    <label for="Email" class="blind">이메일 로그인 영역</label>
+                    <div class="site__email">
+                        <button>이메일로 로그인</button>
+                    </div>
+                    <!-- //site__email -->
+                    <label for="googleEmail" class="blind">google 계정 로그인 영역</label>
+                    <div class="google__email">
+                        <button><span><img src="assets/img/google_icon.svg">Google 계정으로 로그인</span></button>
+                    </div>
+                    <!-- //google__email -->
+                </div>
+                <div class="sign__signup">
+                    <span>처음 오셨나요?</span>
+                    <a href="signup.html">가입하기</a>
+                </div>
+                <div class="sign__policy"><a href="#">이용약관</a> 및 <a href="#">개인정보처리방침</a>에 동의하고 시작합니다.</div>
+                <!-- // sign___signup -->
+            </fieldset>
+        </form>
+    </div>
+    <!-- //sign__form -->
+
+    <div class="user__find">
+        <li><span>아이디가 기억이 나지 않는다면!</span> <a href="#" class="line-under">아이디 찾기</a></li>
+        <li><span>비밀번호가 기억이 나지 않는다면!</span> <a href="#" class="line-under">비밀번호 찾기</a></li>
+        </ul>
+    </div>
+    <!-- //member__add -->
+</div>
+<!-- //login -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        // modal    
+        $("#header .login").click(function () {
+            $(".sign").show();
+        })
+        $(".sign").click(function () {
+            $(".sign").hide();
+        })
+    })
+</script>
+</body>
+
+</html>
