@@ -175,6 +175,13 @@
         #horizontal>section {
             width: 100%;
         }
+
+        /* .parallax__item__desc */
+        .parallax__item__desc {
+            margin-left: 2vw;
+            font-size: 2vw;
+            z-index: 1000;
+        }
     </style>
 </head>
 
@@ -212,7 +219,7 @@
         <!-- //section1 -->
         <section id="section2" class="parallax__item">
             <span class="parallax__item__num">02</span>
-            <figure class="parallax__item__imgWrap">
+            <figure class="parallax__item__imgWrap img2">
                 <div class="parallax__item__img"></div>
             </figure>
         </section>
@@ -220,7 +227,7 @@
         <main id="horizontal">
             <section id="section3" class="parallax__item">
                 <span class="parallax__item__num">03</span>
-                <figure class="parallax__item__imgWrap">
+                <figure class="parallax__item__imgWrap img3">
                     <div class="parallax__item__img"></div>
                 </figure>
             </section>
@@ -239,6 +246,7 @@
                 </figure>
             </section>
             <!-- //section5 -->
+
             <section id="section6" class="parallax__item">
                 <span class="parallax__item__num">06</span>
                 <figure class="parallax__item__imgWrap img6">
@@ -246,6 +254,7 @@
                 </figure>
             </section>
             <!-- //section6 -->
+
             <section id="section7" class="parallax__item">
                 <span class="parallax__item__num">07</span>
                 <figure class="parallax__item__imgWrap img7">
@@ -256,14 +265,15 @@
         </main>
         <section id="section8" class="parallax__item">
             <span class="parallax__item__num">08</span>
-            <figure class="parallax__item__imgWrap">
+            <figure class="parallax__item__imgWrap img8">
                 <div class="parallax__item__img"></div>
             </figure>
+            <p class="parallax__item__desc split">결과도 중요하지만, 과정을 더 중요하게 생각한다</p>
         </section>
         <!-- //section8 -->
         <section id="section9" class="parallax__item">
             <span class="parallax__item__num">09</span>
-            <figure class="parallax__item__imgWrap">
+            <figure class="parallax__item__imgWrap img9">
                 <div class="parallax__item__img"></div>
             </figure>
         </section>
@@ -296,6 +306,47 @@
             }
         })
 
+        // 01 스크롤을 내릴 때 이미지가 움직임
+        gsap.to("#section1 .img1", {
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100
+        });
+
+        // 02 : scrub : 스크롤 한 만큼만 움직입니다.
+        gsap.to("#section2 .img2", {
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section2 .img2",
+                markers: false,
+                start: "top 50%",
+                end: "bottom 10%",
+                scrub: true // tue / mumber
+            }
+        })
+
+        // 03 : pin 고정
+        gsap.to("#section3 .img3", {
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+
+            scrollTrigger: {
+                trigger: "#section3 .img3",
+                start: "top 50%",
+                end: "bottom 200px",
+                scrub: true,
+                pin: true,
+                markers: false,
+            }
+        })
+
         // 04. 이미지 조절
         gsap.to(".img4", {
             y: -200,
@@ -310,6 +361,86 @@
                 id: "img4"
             }
         })
+
+        // 05. 이미지 확대
+        gsap.to(".img5", {
+            scale: 2,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img5",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                markers: true,
+                id: "img5"
+            }
+        })
+
+        // 06. 이미지 급 확대!
+        gsap.to(".img6", {
+            scale: 4,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img6",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                markers: true,
+                id: "img6"
+            }
+        })
+
+        // 07. 이미지 급 확대!
+        gsap.to(".img7", {
+            scale: 2,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img7",
+                containerAnimation: scrollTween,
+                start: "left",
+                toggleActions: "play none reverse none",
+                markers: true,
+                id: "img7"
+            }
+        })
+
+        gsap.to("#section7 .parallax__item__img", {
+            rotation: "+=360", // 현재 각도에서 360도 추가
+            duration: 10, // 회전 완료까지 걸리는 시간
+            ease: "none", // 균일한 속도
+            repeat: -1, // 무한 반복
+        });
+
+        // 08. 위에서 아래로
+        // section8의 이미지와 글씨 애니메이션
+        gsap.from("#section8 .parallax__item__img, #section8 .parallax__item__desc", {
+            y: -400, // 시작 위치를 위쪽으로 설정
+            duration: 3, // 애니메이션 지속 시간 설정
+            ease: "power2.out", // 부드럽게 마무리되는 효과
+            scrollTrigger: {
+                trigger: "#section8", // 애니메이션을 트리거할 요소
+                start: "top bottom", // 애니메이션 시작 조건 (섹션의 상단이 뷰포트 하단에 닿을 때)
+                end: "center center", // 애니메이션 종료 조건 (섹션의 중심이 뷰포트 중심에 오면)
+                scrub: true // 스크롤 위치에 따라 애니메이션 진행
+            }
+        });
+
+        gsap.to(".img9", {
+            x: 1900, // 100px 오른쪽으로 이동
+            duration: 4, // 이동 완료까지 걸리는 시간
+            ease: "power3.inOut", // 부드럽게 시작하고 끝내는 효과
+            scrollTrigger: {
+                trigger: "#section9",
+                start: "top center", // 섹션 상단이 뷰포트 중앙에 오면 시작
+                end: "bottom top", // 섹션 하단이 뷰포트 상단에 오면 종료
+                scrub: true // 스크롤 위치에 따라 애니메이션 진행
+            }
+        });
+
+
     </script>
 </body>
 
