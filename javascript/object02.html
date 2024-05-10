@@ -80,7 +80,7 @@
                 <li><a href="#">19. array.prototype<em>. indexOf()</em>💛 메서드는 배열을 검색하고, 위치값(숫자)을 반환합니다.</a></li>
                 <li><a href="#">20. array.prototype<em>. lastIndexOf()</em> 메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다. </a>
                 </li>
-                <li><a href="#">21. array.prototype<em>. fjoinndLastIndex()</em>💛 메서드는 배열의 요소를 추가하여, 하나의 문자열로
+                <li><a href="#">21. array.prototype<em>. join()</em>💛 메서드는 배열의 요소를 추가하여, 하나의 문자열로
                         반환합니다.</a></li>
                 <li><a href="#">22. array.prototype<em>. pop()</em> 메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다. </a></li>
                 <li><a href="#">23. array.prototype<em>. push()</em>💛 메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다. </a>
@@ -163,7 +163,7 @@
             <!-- //sample01 -->
 
             <div id="sample02" class="sample">
-                <h3>02. .forEach</h3><br>
+                <h3>02. .forEach()</h3><br>
                 <p class="notice">.forEach()
                 <ul>
                     <li>'Array.prototype.find()' 메서드는 주어진 조건을 만족하는 배열의 첫 번째 요소를 찾아 반환하는 JavaScript의 배열 메서드입니다.</li>
@@ -220,7 +220,7 @@
             <!-- //sample02 -->
 
             <div id="sample03" class="sample">
-                <h3>03. .map</h3><br>
+                <h3>03. .map()</h3><br>
                 <p class="notice">.map()
                 <ul>
                     <li>'Array.prototype.map()' 메서드는 배열의 각 요소에 대해 주어진 함수를 호출하여 새로운 배열을 생성하는 JavaScript의 배열 메서드입니다.</li>
@@ -270,7 +270,7 @@
             <!-- //sample03 -->
 
             <div id="sample04" class="sample">
-                <h3>04. .indexOf</h3><br>
+                <h3>04. .indexOf()</h3><br>
                 <p class="notice">.includes("문자열")
                 <ul>
                     <li>'Array.prototype.indexOf()' 메서드는 배열에서 지정된 요소를 찾아 그 인덱스를 반환하는 JavaScript의 배열 메서드입니다.</li>
@@ -325,7 +325,7 @@
             <!-- //sample04 -->
 
             <div id="sample05" class="sample">
-                <h3>05. .join</h3><br>
+                <h3>05. .join()</h3><br>
                 <p class="notice">.join()
                 <ul>
                     <li>
@@ -370,10 +370,54 @@
             <!-- //sample05 -->
 
             <div id="sample06" class="sample">
-                <h3>06. .push</h3><br>
+                <h3>06. .push()</h3><br>
                 <p class="notice">.indexOf("문자열")
                 <ul>
                     <li>'Array.prototype.push()' 메서드는 배열의 끝에 하나 이상의 요소를 추가하는 JavaScript의 배열 메서드입니다.</li>
+                    <li>push() 메서드는 배열의 끝에 요소를 추가할 때 사용되며, 한 번에 여러 요소를 추가할 수도 있습니다. <br>
+                        이 메서드를 사용하여 배열에 요소를 추가하면 배열의 원본이 변경됩니다.</li>
+                </ul>
+                </p>
+                <pre class="javascript"><code>{
+    const fruits = ['apple', 'banana'];
+
+    fruits.push('cherry');
+    console.log(fruits); // ["apple", "banana", "cherry"]
+}</code></pre>
+                <p>
+                    위의 예제에서는 fruits 배열의 끝에 'cherry'라는 요소를 추가하고 있습니다. <br>
+                    따라서 push() 메서드를 호출한 후에는 fruits 배열이 ["apple", "banana", "cherry"]로 업데이트됩니다. <br><br>
+                </p>
+                <pre class="javascript"><code>{
+    const numbers = [1, 2, 3];
+
+    const newLength = numbers.push(4, 5);
+    console.log(numbers); // [1, 2, 3, 4, 5]
+    console.log(newLength); // 5                    
+}</code></pre>
+                <p>
+                    push() 메서드는 배열에 하나 이상의 요소를 추가하고, 배열의 길이를 반환합니다. 추가된 요소의 인덱스는 배열의 길이와 동일합니다.<br>
+                    위의 예제에서는 numbers 배열에 4와 5라는 요소를 추가하고 있습니다. <br>
+                    push() 메서드는 배열의 길이를 반환하므로, newLength 변수에는 배열의 새로운 길이인 5가 저장됩니다.<br><br>
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            ["apple", "banana", "cherry"]<br>
+                            [1, 2, 3, 4, 5]<br>
+                            5 <br><br>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample06 -->
+
+            <div id="sample07" class="sample">
+                <h3>07. .splice()</h3><br>
+                <p class="notice">.indexOf("문자열")
+                <ul>
+                    <li>'. 이 메서드는 원본 배열을 수정하지 않으며, 시작 인덱스와 종료 인덱스를 사용하여 배열의 특정 부분을 선택합니다.</li>
                     <li>push() 메서드는 배열의 끝에 요소를 추가할 때 사용되며, 한 번에 여러 요소를 추가할 수도 있습니다. <br>
                         이 메서드를 사용하여 배열에 요소를 추가하면 배열의 원본이 변경됩니다.</li>
                 </ul>
