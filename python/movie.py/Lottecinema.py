@@ -1,4 +1,5 @@
 from selenium import webdriver
+from user_agent import generate_user_agent, generate_navigator
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
@@ -10,9 +11,17 @@ from datetime import datetime
 import time
 import json
 
+print(generate_user_agent(device_type='desktop'))
+print(generate_user_agent(os='win', device_type='desktop'))
+print(generate_user_agent(os=('mac', 'linux'), device_type='desktop'))
+
+navigator = generate_navigator()
+print(navigator)
+print(navigator['platform'])
+
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
-filename = f"lottecinema_megabox100_{current_date}.json"
+filename = f"lottecinema_Chart_{current_date}.json"
 
 # 웹드라이브 설치
 options = ChromeOptions()
@@ -57,6 +66,8 @@ for track in tracks:
         })
 
 print(music_data)
+
+
 
 # 데이터를 JSON 파일로 저장
 with open(filename, 'w', encoding='utf-8') as f:

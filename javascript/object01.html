@@ -40,8 +40,7 @@
         <main id="main">
                 <div class="main__menu container">
                         <ul>
-                                <li><a href="#sample01">01. <em>string.prototype.at()</em> 메서드는 지정한 숫자(index)를 받아, 문자열에서
-                                                해당 되는 인덱스의 요소를
+                                <li><a href="#sample01">01. <em>.at()</em> 메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를
                                                 반환합니다.</a></li>
                                 <li><a href="#sample02">02. <em>string.prototype.charAt()</em> 메서드는 지정한 숫자(index)를 받아,
                                                 문자열에서 해당 되는 인덱스의
@@ -186,7 +185,7 @@
 
                         <div id="sample02" class="sample">
                                 <h3>02. .includes()</h3><br>
-                                <p>
+                                <p class="notice">"문자열".includes(값)
                                 <ul>
                                         <li>'String.prototype.includes()' 메서드는 문자열 안에 특정 문자열이나 문자가 있는지 확인하는 JavaScript의
                                                 기능입니다.</li>
@@ -221,8 +220,8 @@
                         <!-- //sample02 -->
 
                         <div id="sample03" class="sample">
-                                <h3>03. .includes()</h3><br>
-                                <p>
+                                <h3>03. .indexof()</h3><br>
+                                <p class="notice">"문자열".includes(값)
                                 <ul>
                                         <li><b>문자열 검색:</b> 이 메서드는 문자열 안에서 특정 문자열 또는 문자의 첫 번째 발생 위치를 찾습니다.</li>
                                         <li><b>인덱스 반환:</b> 찾는 문자열이나 문자가 문자열 안에서 발견되면 해당 인덱스를 반환합니다. 발견되지 않을 경우에는 -1을
@@ -275,8 +274,8 @@
                         <!-- //sample03 -->
 
                         <div id="sample04" class="sample">
-                                <h3>04. .match</h3><br>
-                                <p>
+                                <h3>04. .match()</h3><br>
+                                <p class="notice">"문자열".match(정규식)
                                 <ul>
                                         <li>'String.prototype.match()' 메서드는 정규 표현식을 사용하여 문자열에서 패턴을 검색하고, 검색된 결과를 배열로
                                                 반환하는 JavaScript의 문자열 메서드입니다. .</li>
@@ -316,8 +315,8 @@
                         <!-- //sample04 -->
 
                         <div id="sample05" class="sample">
-                                <h3>05. .match</h3><br>
-                                <p>
+                                <h3>05. .search()</h3><br>
+                                <p class="notice">"문자열".search(정규식)
                                 <ul>
                                         <li>'String.prototype.search()' 메서드는 주어진 정규 표현식과 일치하는 문자열의 위치를 검색하는 JavaScript의
                                                 문자열 메서드입니다.</li>
@@ -358,8 +357,8 @@
                         <!-- //sample05 -->
 
                         <div id="sample06" class="sample">
-                                <h3>06. .slice</h3><br>
-                                <p>
+                                <h3>06. .slice()</h3><br>
+                                <p class="notice">"배열 또는 문자열".slice(시작 인덱스, 종료 인덱스)
                                 <ul>
                                         <li>'String.prototype.slice()' 메서드는 문자열에서 특정 부분을 추출하여 새로운 문자열을 반환하는 JavaScript의
                                                 문자열 메서드입니다.</li>
@@ -405,51 +404,43 @@
                         <!-- //sample06 -->
 
                         <div id="sample07" class="sample">
-                                <h3>07. .substring</h3><br>
-                                <p>
+                                <h3>07. .substring()</h3><br>
+                                <p class="notice">"문자열".substring(시작 인덱스, 종료 인덱스)
                                 <ul>
                                         <li>
-                                                'String.prototype.split()' 메서드는 문자열을 지정된 구분자를 기준으로 나누어 배열로 반환하는
-                                                JavaScript의 문자열 메서드입니다.</li>
-                                        <li>이 메서드를 사용하면 문자열을 구분자를 기준으로 여러 부분으로 나눌 수 있습니다.
+                                                substring() 메서드는 자바스크립트의 String 객체에서 사용되며, 지정된 시작 인덱스와 종료 인덱스 사이의 부분
+                                                문자열을 추출하여 새로운 문자열로 반환합니다.</li>
+                                        <li>이 메서드는 원본 문자열을 변경하지 않습니다.
                                         </li>
-                                        <li>split() 메서드는 문자열을 구분자를 기준으로 나누어 배열로 반환하므로, 데이터를 처리하거나 분석할 때 유용하게 사용됩니다.</li>
+                                        <li>메서드는 문자열을 처리할 때 유용하게 사용되며, 특정 부분의 문자열을 필요로 할 때 적합합니다.</li>
                                 </ul>
                                 </p>
                                 <pre class="javascript"><code>{
-        const str = 'apple,banana,orange';
-        const fruits = str.split(',');
-        console.log(fruits); // 출력 결과: ["apple", "banana", "orange"]                                                                                                              
+        const newString = str.substring(indexStart, indexEnd)                                                                                                           
 }</code></pre>
                                 <p>
-                                        위의 예제에서는 'apple,banana,orange' 문자열을 쉼표(',')를 기준으로 나누어 배열로 만들고 있습니다. 따라서 split()
-                                        메서드는 ["apple", "banana", "orange"] 배열을 반환합니다.<br><br>
+                                        indexStart: 추출을 시작할 문자열의 인덱스입니다. <br>
+                                        indexEnd: 추출을 종료할 문자열의 인덱스로, 이 인덱스의 문자는 포함되지 않습니다. indexEnd가 생략되면 문자열의 끝까지
+                                        추출됩니다. <br><br>
                                 </p>
                                 <pre class="javascript"><code>{
-        const str = 'apple,banana,orange';
-        const fruits1 = str.split(',', 2);
-        console.log(fruits1); // 출력 결과: ["apple", "banana"]                                                                                                                                                           
+        const text = 'Hello, world!';
+
+        // 인덱스 7부터 12까지의 부분 문자열을 추출합니다.
+        const part = text.substring(7, 12);
+        
+        console.log(part);
+        // 출력: 'world'                                                                                                                                                                                                 
 }</code></pre>
                                 <p>
-                                        위의 예제에서는 최대 길이를 2로 지정하여 쉼표를 기준으로 최대 2개의 부분 문자열로 나누고 있습니다. <br>
-                                        따라서 split() 메서드는 ["apple", "banana"] 배열을 반환합니다. <br><br>
-                                </p>
-                                <pre class="javascript"><code>{
-        const str = 'apple,banana,orange';
-        const fruits2 = str.split(/[, ]+/);
-        console.log(fruits2); // 출력 결과: ["apple", "banana", "orange"]                                                                                                                                                                                      
-                                }</code></pre>
-                                <p>
-                                        위의 예제에서는 쉼표(',') 또는 공백(' ')을 구분자로 사용하여 문자열을 나누고 있습니다. <br>
-                                        따라서 split() 메서드는 ["apple", "banana", "orange"] 배열을 반환합니다 <br><br>
+                                        이 예제에서는 text 문자열의 인덱스 7에서 12까지의 부분을 추출하여 'world'라는 새로운 문자열을 생성합니다. indexEnd에
+                                        해당하는 문자 '!'는 포함되지 않습니다. <br><br>
                                 </p>
                                 <div class="result">
                                         <details>
                                                 <summary>결과 확인하기</summary>
                                                 <div>
-                                                        ["apple", "banana", "orange"]<br>
-                                                        ["apple", "banana"]<br>
-                                                        ["apple", "banana", "orange"]<br>
+                                                        'morning, everyone!'<br>
                                                 </div>
                                         </details>
                                 </div>
@@ -458,7 +449,7 @@
 
                         <div id="sample08" class="sample">
                                 <h3>08. .split</h3><br>
-                                <p>
+                                <p class="notice">"문자열".indexof(옵션)
                                 <ul>
                                         <li>
                                                 'String.prototype.split()' 메서드는 문자열을 특정 구분자를 기준으로 여러 부분으로 나누어 배열로 만드는
@@ -510,7 +501,7 @@
 
                         <div id="sample09" class="sample">
                                 <h3>09. .trim</h3><br>
-                                <p>
+                                <p class="notice">"문자열".trim()
                                 <ul>
                                         <li>'String.prototype.trim()' 메서드는 문자열의 양 끝에서 공백을 제거한 새로운 문자열을 반환하는 JavaScript의
                                                 문자열 메서드입니다.</li>

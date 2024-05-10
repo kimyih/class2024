@@ -240,6 +240,7 @@ li {
 
 .main__menu ul li a em {
     font-style: normal;
+    position: relative;
 }
 
 .main__menu ul li a em::before {
@@ -247,7 +248,7 @@ li {
     width: 100%;
     height: 8px;
     border-radius: 10px;
-    background-color: #fffffc8d;
+    background-color: #0242f141;
     position: absolute;
     left: 0;
     bottom: 0;
